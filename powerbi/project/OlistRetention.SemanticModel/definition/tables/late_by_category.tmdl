@@ -1,0 +1,44 @@
+table late_by_category
+	lineageTag: f97457e8-3c35-47dc-9898-82171c87e862
+
+	column primary_category
+		dataType: string
+		sourceColumn: primary_category
+		lineageTag: bf994200-e20c-4acf-b67f-e22f9dbc67da
+		summarizeBy: none
+
+	column delivered_orders
+		dataType: int64
+		sourceColumn: delivered_orders
+		lineageTag: 11123b94-c62c-4fb2-8dc5-9bd59d02b85e
+		summarizeBy: none
+
+	column avg_delivery_days
+		dataType: double
+		sourceColumn: avg_delivery_days
+		lineageTag: 588797e6-218c-44d2-9dfc-cd40c31b8ce1
+		summarizeBy: none
+
+	column late_pct
+		dataType: double
+		sourceColumn: late_pct
+		lineageTag: 25ac9342-9090-4ba4-bdd9-ed37bab871bb
+		summarizeBy: none
+
+	column avg_review_score
+		dataType: double
+		sourceColumn: avg_review_score
+		lineageTag: bd308be3-d7cc-486e-8c61-dad95b50d590
+		summarizeBy: none
+
+	partition late_by_category = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataFolder & "/late_by_category.csv"),[Delimiter=",",Encoding=65001,QuoteStyle=QuoteStyle.Csv]),
+				    PromotedHeaders = Table.PromoteHeaders(Source,[PromoteAllScalars=true]),
+				    ChangedType = Table.TransformColumnTypes(PromotedHeaders,{{"primary_category", type text},{"delivered_orders", Int64.Type},{"avg_delivery_days", type number},{"late_pct", type number},{"avg_review_score", type number}})
+				in
+				    ChangedType
+
+	annotation PBI_ResultType = Table

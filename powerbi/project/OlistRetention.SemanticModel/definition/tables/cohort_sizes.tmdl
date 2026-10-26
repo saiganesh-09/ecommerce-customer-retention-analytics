@@ -1,0 +1,32 @@
+table cohort_sizes
+	lineageTag: 9b9d064d-1c87-47bd-9cae-708abfe51f43
+
+	column cohort_month
+		dataType: dateTime
+		sourceColumn: cohort_month
+		lineageTag: 63beeaeb-4762-4d6b-a18e-2b35840b86ee
+		summarizeBy: none
+
+	column cohort_size
+		dataType: int64
+		sourceColumn: cohort_size
+		lineageTag: 353b6cfd-90fc-486c-ae29-8ad815358d65
+		summarizeBy: none
+
+	column cumulative_customers
+		dataType: double
+		sourceColumn: cumulative_customers
+		lineageTag: 3d46e30f-1251-47a0-9c3c-c7d226c68b78
+		summarizeBy: none
+
+	partition cohort_sizes = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataFolder & "/cohort_sizes.csv"),[Delimiter=",",Encoding=65001,QuoteStyle=QuoteStyle.Csv]),
+				    PromotedHeaders = Table.PromoteHeaders(Source,[PromoteAllScalars=true]),
+				    ChangedType = Table.TransformColumnTypes(PromotedHeaders,{{"cohort_month", type date},{"cohort_size", Int64.Type},{"cumulative_customers", type number}})
+				in
+				    ChangedType
+
+	annotation PBI_ResultType = Table

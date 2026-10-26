@@ -1,0 +1,208 @@
+table fact_orders
+	lineageTag: 76b6a3e6-1576-49b6-a56e-3fff407f1e93
+
+	column order_id
+		dataType: string
+		sourceColumn: order_id
+		lineageTag: 22ee1d83-723e-487f-959c-47f0b45c7adf
+		isHidden
+		summarizeBy: none
+
+	column customer_unique_id
+		dataType: string
+		sourceColumn: customer_unique_id
+		lineageTag: c382cd36-a4d6-4657-b570-cd30720aeba6
+		isHidden
+		summarizeBy: none
+
+	column purchase_date
+		dataType: dateTime
+		sourceColumn: purchase_date
+		lineageTag: 120a202f-2242-4e40-84ed-8310eceda14c
+		summarizeBy: none
+
+	column purchase_month
+		dataType: dateTime
+		sourceColumn: purchase_month
+		lineageTag: aadcce39-f003-43be-9b26-8c0c980fdd68
+		summarizeBy: none
+
+	column order_status
+		dataType: string
+		sourceColumn: order_status
+		lineageTag: 0b646fbb-848b-4d3c-b286-955f3eb5a36e
+		summarizeBy: none
+
+	column is_qualifying_order
+		dataType: boolean
+		sourceColumn: is_qualifying_order
+		lineageTag: 9615a327-f443-44ec-aa42-8d1cc75a1b2e
+		summarizeBy: none
+
+	column item_count
+		dataType: int64
+		sourceColumn: item_count
+		lineageTag: f690ea4e-0a06-4adc-b950-a53120994ba1
+		summarizeBy: none
+
+	column items_value
+		dataType: double
+		sourceColumn: items_value
+		lineageTag: 1dcf08da-28fa-45b2-bf95-35f47d047141
+		summarizeBy: none
+
+	column freight_value
+		dataType: double
+		sourceColumn: freight_value
+		lineageTag: 827283d2-9ad0-443d-93c2-137d66840630
+		summarizeBy: none
+
+	column order_total_value
+		dataType: double
+		sourceColumn: order_total_value
+		lineageTag: 17e0edcd-c785-4af3-a2c3-0e6698014229
+		summarizeBy: none
+
+	column payment_total
+		dataType: double
+		sourceColumn: payment_total
+		lineageTag: ef5d0566-3dfd-4092-b41a-9d5bf75526b6
+		summarizeBy: none
+
+	column payment_types
+		dataType: string
+		sourceColumn: payment_types
+		lineageTag: c8f35f45-7ac7-491a-a5b2-5130632438b9
+		summarizeBy: none
+
+	column max_installments
+		dataType: int64
+		sourceColumn: max_installments
+		lineageTag: c737dcda-5a97-4f4b-9c8d-4616cb91b697
+		summarizeBy: none
+
+	column delivered_date
+		dataType: dateTime
+		sourceColumn: delivered_date
+		lineageTag: 915f5c16-75d7-4a92-8a59-693c749defc6
+		summarizeBy: none
+
+	column estimated_delivery_date
+		dataType: dateTime
+		sourceColumn: estimated_delivery_date
+		lineageTag: 5e814655-7a7a-4a4c-a61b-66d449ad4468
+		summarizeBy: none
+
+	column delivery_days
+		dataType: int64
+		sourceColumn: delivery_days
+		lineageTag: fc1d4b7b-9743-4850-b303-2cb5d59dcef5
+		summarizeBy: none
+
+	column delivery_delay_days
+		dataType: int64
+		sourceColumn: delivery_delay_days
+		lineageTag: c3c18b3c-c425-440c-acfa-452aa9565efc
+		summarizeBy: none
+
+	column is_late_delivery
+		dataType: boolean
+		sourceColumn: is_late_delivery
+		lineageTag: 2885635e-9d8f-4fd6-a8d1-ad582aedfaa0
+		summarizeBy: none
+
+	column review_score
+		dataType: int64
+		sourceColumn: review_score
+		lineageTag: b81bb959-fc24-456e-b08a-2ba74d8f950c
+		summarizeBy: none
+
+	column primary_category
+		dataType: string
+		sourceColumn: primary_category
+		lineageTag: 597b304a-789b-4e09-aeb1-29d6f76e22c3
+		summarizeBy: none
+
+	column customer_state
+		dataType: string
+		sourceColumn: customer_state
+		lineageTag: 2c91c6f1-468c-4fb4-96fe-bb80839f76f6
+		summarizeBy: none
+
+	column customer_city
+		dataType: string
+		sourceColumn: customer_city
+		lineageTag: 13f1c283-0b2a-4153-b932-a9c52f1fe22f
+		summarizeBy: none
+
+	measure 'Total Orders' = ```
+			COUNTROWS(fact_orders)
+			```
+		lineageTag: 1f64ac2c-c498-4650-a529-13f8e85956ad
+		formatString: 0
+
+	measure 'Qualifying Orders' = ```
+			CALCULATE([Total Orders],fact_orders[is_qualifying_order]=TRUE())
+			```
+		lineageTag: 105ca8cf-928f-4344-b5e3-cd00ddd073cf
+		formatString: 0
+
+	measure 'Unique Customers' = ```
+			CALCULATE(DISTINCTCOUNT(fact_orders[customer_unique_id]),fact_orders[is_qualifying_order]=TRUE())
+			```
+		lineageTag: d269d970-5a47-4f8c-aa09-46a93116d595
+		formatString: 0
+
+	measure 'Total Revenue (BRL)' = ```
+			CALCULATE(SUM(fact_orders[order_total_value]),fact_orders[is_qualifying_order]=TRUE())
+			```
+		lineageTag: 31de870d-6de3-4fc0-840c-afc3ddbbc9fb
+		formatString: #,##0.00
+
+	measure 'Avg Order Value (BRL)' = ```
+			DIVIDE([Total Revenue (BRL)],[Qualifying Orders])
+			```
+		lineageTag: aad0f961-e462-407d-a464-9217e40b8c9d
+		formatString: #,##0.00
+
+	measure 'Delivered With Timestamps' = ```
+			CALCULATE([Total Orders],fact_orders[order_status]="delivered",NOT ISBLANK(fact_orders[delivered_date]),NOT ISBLANK(fact_orders[estimated_delivery_date]))
+			```
+		lineageTag: 102ae1a1-4196-48ab-9dce-70a4a44e5be1
+		formatString: 0
+
+	measure 'Late Orders' = ```
+			CALCULATE([Total Orders],fact_orders[is_late_delivery]=TRUE())
+			```
+		lineageTag: bb0986ec-5d3c-4e1b-b757-d00a232d45df
+		formatString: 0
+
+	measure 'Late Delivery %' = ```
+			DIVIDE([Late Orders],[Delivered With Timestamps])*100
+			```
+		lineageTag: 443011f6-35d2-4a86-9ebe-adeb20024b87
+		formatString: 0.00
+
+	measure 'Avg Delivery Days' = ```
+			CALCULATE(AVERAGE(fact_orders[delivery_days]),fact_orders[order_status]="delivered",NOT ISBLANK(fact_orders[delivery_days]))
+			```
+		lineageTag: c4b9799a-9644-408d-b4dc-63825a448e0b
+		formatString: 0.0
+
+	measure 'Avg Review Score' = ```
+			CALCULATE(AVERAGE(fact_orders[review_score]),fact_orders[order_status]="delivered")
+			```
+		lineageTag: af59df0c-1342-48ca-8867-4b77a352fb9c
+		formatString: 0.00
+
+	partition fact_orders = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataFolder & "/fact_orders.csv"),[Delimiter=",",Encoding=65001,QuoteStyle=QuoteStyle.Csv]),
+				    PromotedHeaders = Table.PromoteHeaders(Source,[PromoteAllScalars=true]),
+				    ChangedType = Table.TransformColumnTypes(PromotedHeaders,{{"order_id", type text},{"customer_unique_id", type text},{"purchase_date", type date},{"purchase_month", type date},{"order_status", type text},{"is_qualifying_order", type logical},{"item_count", Int64.Type},{"items_value", type number},{"freight_value", type number},{"order_total_value", type number},{"payment_total", type number},{"payment_types", type text},{"max_installments", Int64.Type},{"delivered_date", type date},{"estimated_delivery_date", type date},{"delivery_days", Int64.Type},{"delivery_delay_days", Int64.Type},{"is_late_delivery", type logical},{"review_score", Int64.Type},{"primary_category", type text},{"customer_state", type text},{"customer_city", type text}})
+				in
+				    ChangedType
+
+	annotation PBI_ResultType = Table

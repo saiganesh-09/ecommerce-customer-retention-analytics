@@ -1,0 +1,4 @@
+expression DataFolder = "C:/Users/saiga/OneDrive/Desktop/E-Commerce Customer Retention & Revenue Intelligence/data/processed" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
+	lineageTag: e7b7087d-0b28-418a-bd7b-93fdfed5a728
+
+	annotation PBI_ResultType = Text

@@ -1,11 +1,15 @@
-# Power BI Report — Build Guide
+# Power BI Report
 
-> **Status:** Power BI Desktop is **not installed** on the machine used to
-> build this project, so no `.pbix` file is shipped. Everything needed to
-> build the report in ~30-45 minutes is provided here: exported model
-> tables, Power Query scripts, the data-model spec, DAX measures, page
-> layouts, and validation values. Building it yourself is also excellent
-> interview practice.
+> **Ready-made project:** open **`powerbi/project/OlistRetention.pbip`**
+> in Power BI Desktop. It was generated programmatically by
+> `scripts/build_powerbi_project.py` — a full TMDL semantic model
+> (16 tables, 14 DAX measures, 2 relationships) plus a 4-page PBIR
+> report (32 visuals). On first open, refresh the data: Power Query
+> reads the CSVs in `data/processed/` via the `DataFolder` parameter
+> (edit it under Transform data > Edit parameters if the repo moved).
+>
+> The rest of this document is the manual build guide — use it to
+> rebuild from scratch, to fix issues, or to extend the report.
 
 ## What you need
 

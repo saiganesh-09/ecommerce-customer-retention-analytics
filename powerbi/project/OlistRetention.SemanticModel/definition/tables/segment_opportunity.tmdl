@@ -1,0 +1,86 @@
+table segment_opportunity
+	lineageTag: 7756cd38-01af-414b-9549-2b24ed8b6792
+
+	column rfm_segment
+		dataType: string
+		sourceColumn: rfm_segment
+		lineageTag: 3dc02c6d-04bc-497b-a350-2c742b59da38
+		summarizeBy: none
+
+	column customers
+		dataType: int64
+		sourceColumn: customers
+		lineageTag: 9e15691f-3ba7-4a0c-9b9d-dd328414022e
+		summarizeBy: none
+
+	column pct_customers
+		dataType: double
+		sourceColumn: pct_customers
+		lineageTag: 46619643-da80-464b-8c99-03a048f25dee
+		summarizeBy: none
+
+	column total_revenue_brl
+		dataType: double
+		sourceColumn: total_revenue_brl
+		lineageTag: 2d2973d9-068c-4c13-b79f-fd012f569792
+		summarizeBy: none
+
+	column pct_revenue
+		dataType: double
+		sourceColumn: pct_revenue
+		lineageTag: da66d6e1-9f8c-487a-a379-339102f59a62
+		summarizeBy: none
+
+	column avg_spend_brl
+		dataType: double
+		sourceColumn: avg_spend_brl
+		lineageTag: 596c26a9-a7da-47d5-b573-a18cf9e7ab8f
+		summarizeBy: none
+
+	column avg_recency_days
+		dataType: double
+		sourceColumn: avg_recency_days
+		lineageTag: 62538611-0633-4445-9405-9beb1a2e05c5
+		summarizeBy: none
+
+	column avg_frequency
+		dataType: double
+		sourceColumn: avg_frequency
+		lineageTag: 8775e629-f375-424f-bcd8-cb6c62ecc170
+		summarizeBy: none
+
+	column avg_review_score
+		dataType: double
+		sourceColumn: avg_review_score
+		lineageTag: 59212f4d-191c-4d9a-82fe-980a8fbc6b70
+		summarizeBy: none
+
+	column late_delivery_pct
+		dataType: double
+		sourceColumn: late_delivery_pct
+		lineageTag: c75190b3-cbad-4dd8-b635-865d4a0ab8b2
+		summarizeBy: none
+
+	column avg_value_per_order_brl
+		dataType: double
+		sourceColumn: avg_value_per_order_brl
+		lineageTag: bf5e2d69-5945-4c89-80ba-b69ba1eb416e
+		summarizeBy: none
+
+	column indicative_order_value_pool
+		dataType: int64
+		sourceColumn: indicative_order_value_pool
+		lineageTag: b17b6d76-be71-41db-9756-81159e4a6bac
+		summarizeBy: none
+
+	partition segment_opportunity = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataFolder & "/segment_opportunity.csv"),[Delimiter=",",Encoding=65001,QuoteStyle=QuoteStyle.Csv]),
+				    PromotedHeaders = Table.PromoteHeaders(Source,[PromoteAllScalars=true]),
+				    ChangedType = Table.TransformColumnTypes(PromotedHeaders,{{"rfm_segment", type text},{"customers", Int64.Type},{"pct_customers", type number},{"total_revenue_brl", type number},{"pct_revenue", type number},{"avg_spend_brl", type number},{"avg_recency_days", type number},{"avg_frequency", type number},{"avg_review_score", type number},{"late_delivery_pct", type number},{"avg_value_per_order_brl", type number},{"indicative_order_value_pool", Int64.Type}})
+				in
+				    ChangedType
+
+	annotation PBI_ResultType = Table

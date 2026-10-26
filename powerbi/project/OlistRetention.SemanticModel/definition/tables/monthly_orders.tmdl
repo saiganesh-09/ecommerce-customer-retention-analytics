@@ -1,0 +1,50 @@
+table monthly_orders
+	lineageTag: 7d9c8f43-15f2-429d-9a3b-5bcf5af46fb9
+
+	column purchase_month
+		dataType: dateTime
+		sourceColumn: purchase_month
+		lineageTag: 8ebd7711-5720-4a21-be30-30c4fe09b874
+		summarizeBy: none
+
+	column orders
+		dataType: int64
+		sourceColumn: orders
+		lineageTag: a86c5e0e-d69a-447a-886b-0ae1b9c89a6a
+		summarizeBy: none
+
+	column active_customers
+		dataType: int64
+		sourceColumn: active_customers
+		lineageTag: 2be95b40-159e-42f3-8695-e30bd707852d
+		summarizeBy: none
+
+	column revenue_brl
+		dataType: double
+		sourceColumn: revenue_brl
+		lineageTag: 7d8ae6be-a30d-46ad-9ba1-2b6205f38620
+		summarizeBy: none
+
+	column avg_order_value_brl
+		dataType: double
+		sourceColumn: avg_order_value_brl
+		lineageTag: 47349c93-7728-41b9-9f30-ba7a0b891f66
+		summarizeBy: none
+
+	column avg_delivery_days
+		dataType: double
+		sourceColumn: avg_delivery_days
+		lineageTag: 569bd8ad-755c-429a-8e1f-781446517070
+		summarizeBy: none
+
+	partition monthly_orders = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataFolder & "/monthly_orders.csv"),[Delimiter=",",Encoding=65001,QuoteStyle=QuoteStyle.Csv]),
+				    PromotedHeaders = Table.PromoteHeaders(Source,[PromoteAllScalars=true]),
+				    ChangedType = Table.TransformColumnTypes(PromotedHeaders,{{"purchase_month", type date},{"orders", Int64.Type},{"active_customers", Int64.Type},{"revenue_brl", type number},{"avg_order_value_brl", type number},{"avg_delivery_days", type number}})
+				in
+				    ChangedType
+
+	annotation PBI_ResultType = Table

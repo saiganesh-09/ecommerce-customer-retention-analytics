@@ -1,0 +1,7 @@
+relationship 9212c65e-a0ef-40c7-94e3-cc91ff7dda8f
+	fromColumn: fact_orders.customer_unique_id
+	toColumn: dim_customers.customer_unique_id
+
+relationship 29f59952-3d5e-478c-a75a-72405c7d8b3c
+	fromColumn: fact_orders.purchase_date
+	toColumn: dim_date.date

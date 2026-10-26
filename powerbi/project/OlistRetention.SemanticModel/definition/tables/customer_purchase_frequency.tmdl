@@ -1,0 +1,44 @@
+table customer_purchase_frequency
+	lineageTag: 8a11e5a3-7cad-4021-bbfa-d3b3f9f34772
+
+	column order_count
+		dataType: int64
+		sourceColumn: order_count
+		lineageTag: 44376faa-ba73-4241-bcc5-4111d465f42d
+		summarizeBy: none
+
+	column customers
+		dataType: int64
+		sourceColumn: customers
+		lineageTag: b7b0d3a2-9d41-4dfe-82ba-2d671ae31130
+		summarizeBy: none
+
+	column pct_of_customers
+		dataType: double
+		sourceColumn: pct_of_customers
+		lineageTag: 321acb64-4aa1-46a3-bf15-3a4fd8d2e47e
+		summarizeBy: none
+
+	column revenue_brl
+		dataType: double
+		sourceColumn: revenue_brl
+		lineageTag: 88ec9213-9515-45f4-8a33-3dcc4a18be44
+		summarizeBy: none
+
+	column pct_of_revenue
+		dataType: double
+		sourceColumn: pct_of_revenue
+		lineageTag: 228e340f-0776-4b9b-89da-75ceb628f2e2
+		summarizeBy: none
+
+	partition customer_purchase_frequency = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataFolder & "/customer_purchase_frequency.csv"),[Delimiter=",",Encoding=65001,QuoteStyle=QuoteStyle.Csv]),
+				    PromotedHeaders = Table.PromoteHeaders(Source,[PromoteAllScalars=true]),
+				    ChangedType = Table.TransformColumnTypes(PromotedHeaders,{{"order_count", Int64.Type},{"customers", Int64.Type},{"pct_of_customers", type number},{"revenue_brl", type number},{"pct_of_revenue", type number}})
+				in
+				    ChangedType
+
+	annotation PBI_ResultType = Table

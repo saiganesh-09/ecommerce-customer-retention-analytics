@@ -55,10 +55,12 @@ Honest constraints on what this analysis can and cannot claim.
 
 ## Process limitations
 
-* The Power BI report could not be built in this environment (Power BI
-  Desktop not installed). The model, queries, DAX and layout specs are
-  provided and validated for logic, but the `.pbix` itself is unverified
-  — see `powerbi/README.md`.
+* The Power BI report ships as a **generated `.pbip` project**
+  (`powerbi/project/OlistRetention.pbip`, built by
+  `scripts/build_powerbi_project.py`). PBIR/TMDL are text formats, so the
+  project is fully reproducible in git — but Desktop GUI polish (exact
+  positions, theme tweaks) should be reviewed on first open; see
+  `powerbi/README.md`.
 * Dockerised PostgreSQL 16 was used because no native PostgreSQL server
   was installed; behaviour is equivalent for this workload.
 * Geolocation table (1M rows) was profiled but not used — city-level

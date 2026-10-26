@@ -36,8 +36,9 @@ arrived late. Full reasoning and trade-offs:
 
 PostgreSQL 16 (Docker) · SQL (CTEs, window functions, NTILE, validation
 suites) · Python 3.13 (pandas, NumPy, Matplotlib, Seaborn, psycopg2,
-SQLAlchemy) · Jupyter · pytest (55 tests) · Power BI (model spec, Power
-Query M, DAX — see `powerbi/`).
+SQLAlchemy) · Jupyter · pytest (55 tests) · **Power BI — ready-made
+project at `powerbi/project/OlistRetention.pbip`** (generated TMDL +
+PBIR; see `powerbi/README.md`).
 
 ## Repository layout
 

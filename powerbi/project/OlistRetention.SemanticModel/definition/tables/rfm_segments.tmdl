@@ -1,0 +1,74 @@
+table rfm_segments
+	lineageTag: a269c43d-9f15-4ab4-a0b2-f32cd66233b2
+
+	column rfm_segment
+		dataType: string
+		sourceColumn: rfm_segment
+		lineageTag: 63de5ed3-8796-4dda-8f65-e6b37781521b
+		summarizeBy: none
+
+	column customers
+		dataType: int64
+		sourceColumn: customers
+		lineageTag: 2284b7e8-7f43-4f00-aa03-58942ebefbcc
+		summarizeBy: none
+
+	column pct_customers
+		dataType: double
+		sourceColumn: pct_customers
+		lineageTag: 3f81126c-cf18-44e2-b109-820110173be9
+		summarizeBy: none
+
+	column total_revenue_brl
+		dataType: double
+		sourceColumn: total_revenue_brl
+		lineageTag: b27a5a7c-5859-4719-9c97-3ed3a9e16229
+		summarizeBy: none
+
+	column pct_revenue
+		dataType: double
+		sourceColumn: pct_revenue
+		lineageTag: 5d3bc062-9917-44b3-9ccd-4b76199a9a18
+		summarizeBy: none
+
+	column avg_spend_brl
+		dataType: double
+		sourceColumn: avg_spend_brl
+		lineageTag: 81336a8a-7bfb-4142-b8ec-7e270094b3dd
+		summarizeBy: none
+
+	column avg_recency_days
+		dataType: double
+		sourceColumn: avg_recency_days
+		lineageTag: 478ccda9-375d-4649-8879-e43f0d9be8ad
+		summarizeBy: none
+
+	column avg_frequency
+		dataType: double
+		sourceColumn: avg_frequency
+		lineageTag: 511440c2-6382-422d-b2a8-3007a885a4ec
+		summarizeBy: none
+
+	column avg_review_score
+		dataType: double
+		sourceColumn: avg_review_score
+		lineageTag: b3579238-2864-4ad9-8576-c673e6476cc9
+		summarizeBy: none
+
+	column late_delivery_pct
+		dataType: double
+		sourceColumn: late_delivery_pct
+		lineageTag: 47ea93c9-10e1-4e8d-85f9-78a287b3f88b
+		summarizeBy: none
+
+	partition rfm_segments = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataFolder & "/rfm_segments.csv"),[Delimiter=",",Encoding=65001,QuoteStyle=QuoteStyle.Csv]),
+				    PromotedHeaders = Table.PromoteHeaders(Source,[PromoteAllScalars=true]),
+				    ChangedType = Table.TransformColumnTypes(PromotedHeaders,{{"rfm_segment", type text},{"customers", Int64.Type},{"pct_customers", type number},{"total_revenue_brl", type number},{"pct_revenue", type number},{"avg_spend_brl", type number},{"avg_recency_days", type number},{"avg_frequency", type number},{"avg_review_score", type number},{"late_delivery_pct", type number}})
+				in
+				    ChangedType
+
+	annotation PBI_ResultType = Table
