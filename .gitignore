@@ -1,0 +1,35 @@
+# Raw data (do not commit the Olist dataset - download from Kaggle instead)
+data/raw/
+*.zip
+
+# Processed data outputs are regenerable; keep small summary CSVs if desired
+data/processed/*.csv
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.ipynb_checkpoints/
+
+# Environment & credentials
+.env
+
+# OS / editor
+Thumbs.db
+.DS_Store
+nul
+.vscode/
+.idea/
+
+# Power BI local caches / large binaries
+*.pbix
+*.pbit
+powerbi/screenshots/*.png
+
+# Large generated artifacts
+outputs/reports/*.pdf
+
+# Regenerable analysis outputs
+outputs/summary_tables/*.csv

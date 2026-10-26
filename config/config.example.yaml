@@ -1,0 +1,19 @@
+# Project configuration. Copy to config/config.yaml for local overrides.
+database:
+  host: localhost
+  port: 5432
+  name: olist_analytics
+  user: olist
+
+paths:
+  raw_data: data/raw
+  processed_data: data/processed
+  outputs: outputs
+
+analysis:
+  # Reference date for RFM recency. If null, the pipeline uses
+  # max(qualifying order purchase date) + 1 day from the data itself.
+  rfm_reference_date: null
+  # Cohorts whose observation window ends before this many months are
+  # flagged as incomplete and excluded from headline retention claims.
+  min_observable_cohort_months: 6
