@@ -75,8 +75,8 @@ def main():
     for vj in (P / "definition" / "pages").rglob("visual.json"):
         v = json.loads(vj.read_text())
         vis = v.get("visual", {})
-        if vis.get("visualType") == "textbox":
-            continue
+        # textboxes get the card treatment too - their default white
+        # background is unreadable against the dark canvas
         vco = vis.setdefault("visualContainerObjects", {})
         vco["background"] = [{"properties": {
             "show": lit("true"),
