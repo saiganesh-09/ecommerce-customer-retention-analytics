@@ -23,7 +23,7 @@ Dataset](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce)
 | Median time to 2nd order | **29 days** |
 | Late delivery rate | **6.77%** of delivered orders |
 | Avg review score: late vs on-time | **2.27 vs 4.29** |
-| Repeat rate after late vs on-time first order | **2.73% vs 3.30%** (3.09% vs 4.07% on the 180-day-window cut) |
+| Repeat rate after late vs on-time first order | **2.49% vs 3.04%** (2.99% vs 4.04% on the 180-day-window cut) |
 
 **Recommendation:** prioritize **Recent One-Time Buyers** (36,141
 customers, R$5.9M historical revenue, ~91-day avg recency) with a

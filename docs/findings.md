@@ -70,9 +70,9 @@ delivered order, Sep-2016 to Oct-2018, unless stated otherwise.
 ## F7 — Late first delivery is associated with lower repeat purchasing
 
 * **Question:** do customers with a late first order return less?
-* **Result:** repeat rate **2.73%** after a late first order vs **3.30%**
-  after on-time (relative gap ~17%). On the fair-window cut (first order
-  >=180 days before data end): **3.09% vs 4.07%** (~24% relative gap).
+* **Result:** repeat rate **2.49%** after a late first order vs **3.04%**
+  after on-time (relative gap ~18%). On the fair-window cut (first order
+  >=180 days before data end): **2.99% vs 4.04%** (~26% relative gap).
   Direction is consistent in both cuts.
 * **Artefacts:** `analytics.repeat_by_first_delivery`,
   `repeat_rate_by_first_delivery.png`
@@ -83,7 +83,7 @@ delivered order, Sep-2016 to Oct-2018, unless stated otherwise.
 
 * **Result:** "Recent One-Time Buyers" = 36,141 customers (38.7%),
   R$5.94M historical revenue (38.5%), avg recency 91 days. "High-Value
-  Inactive" = 13,782 customers, R$4.24M (27.5%), avg spend R$307.86,
+  Inactive" = 13,782 customers, R$4.24M (27.5%), avg spend R$307.76,
   avg recency 395 days. All proven repeat segments (Champions, Loyal,
   Potential Loyalists, Needs Attention, At Risk) total only 2,801
   customers (3.0%).

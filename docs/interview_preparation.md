@@ -29,7 +29,7 @@ enables retention, RFM and experience analysis in one place.
 
 **Q4. What is the single headline finding?**
 Repeat purchase rate is 3.0% — but late first deliveries depress it
-further (2.7% vs 3.3%, or 3.1% vs 4.1% on the fair-window cut) and late
+further (2.5% vs 3.0%, or 3.0% vs 4.0% on the fair-window cut) and late
 orders average a 2.27 review score vs 4.29 on-time. The recommended
 target is the 36k "Recent One-Time Buyers" segment.
 
