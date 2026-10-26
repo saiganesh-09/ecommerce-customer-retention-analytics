@@ -1,40 +1,40 @@
 table monthly_orders
-	lineageTag: 7d9c8f43-15f2-429d-9a3b-5bcf5af46fb9
+	lineageTag: 49d90795-09af-437a-b30d-2c787a771f20
 
 	column purchase_month
 		dataType: dateTime
 		sourceColumn: purchase_month
-		lineageTag: 8ebd7711-5720-4a21-be30-30c4fe09b874
+		lineageTag: 670c573c-e61c-4352-9237-a22e09138f41
 		summarizeBy: none
 
 	column orders
 		dataType: int64
 		sourceColumn: orders
-		lineageTag: a86c5e0e-d69a-447a-886b-0ae1b9c89a6a
+		lineageTag: c279724b-cc2a-474f-88cd-ed85447701ad
 		summarizeBy: none
 
 	column active_customers
 		dataType: int64
 		sourceColumn: active_customers
-		lineageTag: 2be95b40-159e-42f3-8695-e30bd707852d
+		lineageTag: 3bceef17-9557-48c7-9867-a36552011bde
 		summarizeBy: none
 
 	column revenue_brl
 		dataType: double
 		sourceColumn: revenue_brl
-		lineageTag: 7d8ae6be-a30d-46ad-9ba1-2b6205f38620
+		lineageTag: 0e303523-2b62-4eed-b1f0-413e20a2f4aa
 		summarizeBy: none
 
 	column avg_order_value_brl
 		dataType: double
 		sourceColumn: avg_order_value_brl
-		lineageTag: 47349c93-7728-41b9-9f30-ba7a0b891f66
+		lineageTag: 13a0c347-0a43-41f2-afb4-4fb886c1d2d7
 		summarizeBy: none
 
 	column avg_delivery_days
 		dataType: double
 		sourceColumn: avg_delivery_days
-		lineageTag: 569bd8ad-755c-429a-8e1f-781446517070
+		lineageTag: 008bf768-f391-47e8-b066-9d483625bfea
 		summarizeBy: none
 
 	partition monthly_orders = m

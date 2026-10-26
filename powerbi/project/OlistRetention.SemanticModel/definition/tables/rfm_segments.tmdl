@@ -1,64 +1,64 @@
 table rfm_segments
-	lineageTag: a269c43d-9f15-4ab4-a0b2-f32cd66233b2
+	lineageTag: f2f4398c-3ff4-4396-a92d-83e27676cf6e
 
 	column rfm_segment
 		dataType: string
 		sourceColumn: rfm_segment
-		lineageTag: 63de5ed3-8796-4dda-8f65-e6b37781521b
+		lineageTag: 40d4f84d-f5d8-47d8-91e3-15af69afece8
 		summarizeBy: none
 
 	column customers
 		dataType: int64
 		sourceColumn: customers
-		lineageTag: 2284b7e8-7f43-4f00-aa03-58942ebefbcc
+		lineageTag: 203f7042-0257-4e14-88b7-69aa2bd3f0d7
 		summarizeBy: none
 
 	column pct_customers
 		dataType: double
 		sourceColumn: pct_customers
-		lineageTag: 3f81126c-cf18-44e2-b109-820110173be9
+		lineageTag: f93da55b-41c4-403c-a9e2-d96e1606401f
 		summarizeBy: none
 
 	column total_revenue_brl
 		dataType: double
 		sourceColumn: total_revenue_brl
-		lineageTag: b27a5a7c-5859-4719-9c97-3ed3a9e16229
+		lineageTag: f4358b70-c5c4-4bcf-a9d8-bd7c468ec0ae
 		summarizeBy: none
 
 	column pct_revenue
 		dataType: double
 		sourceColumn: pct_revenue
-		lineageTag: 5d3bc062-9917-44b3-9ccd-4b76199a9a18
+		lineageTag: bbc24eaf-fdce-4b02-95a9-d195aaae140a
 		summarizeBy: none
 
 	column avg_spend_brl
 		dataType: double
 		sourceColumn: avg_spend_brl
-		lineageTag: 81336a8a-7bfb-4142-b8ec-7e270094b3dd
+		lineageTag: 9db3cc87-8b8e-4267-af6b-24ba634e5100
 		summarizeBy: none
 
 	column avg_recency_days
 		dataType: double
 		sourceColumn: avg_recency_days
-		lineageTag: 478ccda9-375d-4649-8879-e43f0d9be8ad
+		lineageTag: 0df8b69c-9679-465d-897c-841f1a2d8774
 		summarizeBy: none
 
 	column avg_frequency
 		dataType: double
 		sourceColumn: avg_frequency
-		lineageTag: 511440c2-6382-422d-b2a8-3007a885a4ec
+		lineageTag: 47774e76-57dd-4027-a1b3-6dade3d40249
 		summarizeBy: none
 
 	column avg_review_score
 		dataType: double
 		sourceColumn: avg_review_score
-		lineageTag: b3579238-2864-4ad9-8576-c673e6476cc9
+		lineageTag: 4af99698-f72e-47bd-927a-3b7ae152933e
 		summarizeBy: none
 
 	column late_delivery_pct
 		dataType: double
 		sourceColumn: late_delivery_pct
-		lineageTag: 47ea93c9-10e1-4e8d-85f9-78a287b3f88b
+		lineageTag: b5eb2fa7-a8dd-4150-badb-9193350e0211
 		summarizeBy: none
 
 	partition rfm_segments = m

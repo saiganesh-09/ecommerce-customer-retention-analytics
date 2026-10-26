@@ -1,76 +1,76 @@
 table segment_opportunity
-	lineageTag: 7756cd38-01af-414b-9549-2b24ed8b6792
+	lineageTag: 98977dbe-7f90-4b5e-a32b-9754f51d838d
 
 	column rfm_segment
 		dataType: string
 		sourceColumn: rfm_segment
-		lineageTag: 3dc02c6d-04bc-497b-a350-2c742b59da38
+		lineageTag: 63907555-2471-4417-84ba-928e61bf82b1
 		summarizeBy: none
 
 	column customers
 		dataType: int64
 		sourceColumn: customers
-		lineageTag: 9e15691f-3ba7-4a0c-9b9d-dd328414022e
+		lineageTag: fc6ede03-2612-410e-9e96-c0bec8805397
 		summarizeBy: none
 
 	column pct_customers
 		dataType: double
 		sourceColumn: pct_customers
-		lineageTag: 46619643-da80-464b-8c99-03a048f25dee
+		lineageTag: 134d2375-07d3-47da-98b3-9919b861aacd
 		summarizeBy: none
 
 	column total_revenue_brl
 		dataType: double
 		sourceColumn: total_revenue_brl
-		lineageTag: 2d2973d9-068c-4c13-b79f-fd012f569792
+		lineageTag: 4d437066-8639-400f-a842-024c16a29bcf
 		summarizeBy: none
 
 	column pct_revenue
 		dataType: double
 		sourceColumn: pct_revenue
-		lineageTag: da66d6e1-9f8c-487a-a379-339102f59a62
+		lineageTag: 00303651-8204-4d37-9911-55838e37c8fc
 		summarizeBy: none
 
 	column avg_spend_brl
 		dataType: double
 		sourceColumn: avg_spend_brl
-		lineageTag: 596c26a9-a7da-47d5-b573-a18cf9e7ab8f
+		lineageTag: ecac2a8e-bf88-4469-85b5-3aa48c4974d4
 		summarizeBy: none
 
 	column avg_recency_days
 		dataType: double
 		sourceColumn: avg_recency_days
-		lineageTag: 62538611-0633-4445-9405-9beb1a2e05c5
+		lineageTag: 56e63a33-7d17-4f63-bf3a-d67ea87d6008
 		summarizeBy: none
 
 	column avg_frequency
 		dataType: double
 		sourceColumn: avg_frequency
-		lineageTag: 8775e629-f375-424f-bcd8-cb6c62ecc170
+		lineageTag: 192cdb9c-a274-4308-ba14-d8eefbd8eebe
 		summarizeBy: none
 
 	column avg_review_score
 		dataType: double
 		sourceColumn: avg_review_score
-		lineageTag: 59212f4d-191c-4d9a-82fe-980a8fbc6b70
+		lineageTag: c6b7175d-052f-4dc6-ad98-f08ccfe5b7f5
 		summarizeBy: none
 
 	column late_delivery_pct
 		dataType: double
 		sourceColumn: late_delivery_pct
-		lineageTag: c75190b3-cbad-4dd8-b635-865d4a0ab8b2
+		lineageTag: 05fc9cec-2083-4500-acb2-90e7c045c2cd
 		summarizeBy: none
 
 	column avg_value_per_order_brl
 		dataType: double
 		sourceColumn: avg_value_per_order_brl
-		lineageTag: bf5e2d69-5945-4c89-80ba-b69ba1eb416e
+		lineageTag: 6175b07c-e6f1-44e8-9f9c-9b1a694e0e3e
 		summarizeBy: none
 
 	column indicative_order_value_pool
 		dataType: int64
 		sourceColumn: indicative_order_value_pool
-		lineageTag: b17b6d76-be71-41db-9756-81159e4a6bac
+		lineageTag: dd9be39b-bb59-471f-836a-4143c39bdd12
 		summarizeBy: none
 
 	partition segment_opportunity = m

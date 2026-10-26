@@ -1,198 +1,198 @@
 table fact_orders
-	lineageTag: 76b6a3e6-1576-49b6-a56e-3fff407f1e93
+	lineageTag: 50ff0a2d-c4cf-4aef-8047-c0567b7efce2
 
 	column order_id
 		dataType: string
 		sourceColumn: order_id
-		lineageTag: 22ee1d83-723e-487f-959c-47f0b45c7adf
+		lineageTag: da7a9177-f637-4a26-9642-76c0f090cf3d
 		isHidden
 		summarizeBy: none
 
 	column customer_unique_id
 		dataType: string
 		sourceColumn: customer_unique_id
-		lineageTag: c382cd36-a4d6-4657-b570-cd30720aeba6
+		lineageTag: c8121d97-8f64-427f-9c0e-7bbedcd1fc3a
 		isHidden
 		summarizeBy: none
 
 	column purchase_date
 		dataType: dateTime
 		sourceColumn: purchase_date
-		lineageTag: 120a202f-2242-4e40-84ed-8310eceda14c
+		lineageTag: f6169780-047a-4130-8af9-fd3a5462161a
 		summarizeBy: none
 
 	column purchase_month
 		dataType: dateTime
 		sourceColumn: purchase_month
-		lineageTag: aadcce39-f003-43be-9b26-8c0c980fdd68
+		lineageTag: 4578b7a9-939c-4dbe-874d-ddc8b70432fc
 		summarizeBy: none
 
 	column order_status
 		dataType: string
 		sourceColumn: order_status
-		lineageTag: 0b646fbb-848b-4d3c-b286-955f3eb5a36e
+		lineageTag: 936e6a3d-63d6-4d87-8b53-b91a94ae5b79
 		summarizeBy: none
 
 	column is_qualifying_order
 		dataType: boolean
 		sourceColumn: is_qualifying_order
-		lineageTag: 9615a327-f443-44ec-aa42-8d1cc75a1b2e
+		lineageTag: 6d2b42c8-5a63-493e-87d0-b6f9d0b30370
 		summarizeBy: none
 
 	column item_count
 		dataType: int64
 		sourceColumn: item_count
-		lineageTag: f690ea4e-0a06-4adc-b950-a53120994ba1
+		lineageTag: 6e9e7a21-8757-43a5-b9ac-f3676f98d4af
 		summarizeBy: none
 
 	column items_value
 		dataType: double
 		sourceColumn: items_value
-		lineageTag: 1dcf08da-28fa-45b2-bf95-35f47d047141
+		lineageTag: 01d49856-99b3-4f50-ba23-90943547585d
 		summarizeBy: none
 
 	column freight_value
 		dataType: double
 		sourceColumn: freight_value
-		lineageTag: 827283d2-9ad0-443d-93c2-137d66840630
+		lineageTag: f187d889-d035-4f02-a9a6-1223540d4d01
 		summarizeBy: none
 
 	column order_total_value
 		dataType: double
 		sourceColumn: order_total_value
-		lineageTag: 17e0edcd-c785-4af3-a2c3-0e6698014229
+		lineageTag: e65db5d7-b7d7-42f9-a61f-29c4214693c2
 		summarizeBy: none
 
 	column payment_total
 		dataType: double
 		sourceColumn: payment_total
-		lineageTag: ef5d0566-3dfd-4092-b41a-9d5bf75526b6
+		lineageTag: d77ec486-fc8a-4070-8050-904c85306255
 		summarizeBy: none
 
 	column payment_types
 		dataType: string
 		sourceColumn: payment_types
-		lineageTag: c8f35f45-7ac7-491a-a5b2-5130632438b9
+		lineageTag: 1aa5c28c-745b-4c3d-95e7-9fa6792bdcad
 		summarizeBy: none
 
 	column max_installments
 		dataType: int64
 		sourceColumn: max_installments
-		lineageTag: c737dcda-5a97-4f4b-9c8d-4616cb91b697
+		lineageTag: ebf45a14-d7c4-436a-816e-2e9a538befd2
 		summarizeBy: none
 
 	column delivered_date
 		dataType: dateTime
 		sourceColumn: delivered_date
-		lineageTag: 915f5c16-75d7-4a92-8a59-693c749defc6
+		lineageTag: 72189cd4-135d-400c-8cce-81fa4fee9255
 		summarizeBy: none
 
 	column estimated_delivery_date
 		dataType: dateTime
 		sourceColumn: estimated_delivery_date
-		lineageTag: 5e814655-7a7a-4a4c-a61b-66d449ad4468
+		lineageTag: 7e7cd782-a7fd-46fc-8375-2026960f595b
 		summarizeBy: none
 
 	column delivery_days
 		dataType: int64
 		sourceColumn: delivery_days
-		lineageTag: fc1d4b7b-9743-4850-b303-2cb5d59dcef5
+		lineageTag: 6ff212ae-6b91-49e5-a5bc-d67072c06d42
 		summarizeBy: none
 
 	column delivery_delay_days
 		dataType: int64
 		sourceColumn: delivery_delay_days
-		lineageTag: c3c18b3c-c425-440c-acfa-452aa9565efc
+		lineageTag: c4592103-686f-412d-a8b4-9cb959d6fb9f
 		summarizeBy: none
 
 	column is_late_delivery
 		dataType: boolean
 		sourceColumn: is_late_delivery
-		lineageTag: 2885635e-9d8f-4fd6-a8d1-ad582aedfaa0
+		lineageTag: 1472d204-b9a8-434c-9bb1-10d81e3f4661
 		summarizeBy: none
 
 	column review_score
 		dataType: int64
 		sourceColumn: review_score
-		lineageTag: b81bb959-fc24-456e-b08a-2ba74d8f950c
+		lineageTag: f4dacd66-77f9-4671-9eb5-72fc85d1629c
 		summarizeBy: none
 
 	column primary_category
 		dataType: string
 		sourceColumn: primary_category
-		lineageTag: 597b304a-789b-4e09-aeb1-29d6f76e22c3
+		lineageTag: b4bd15e2-27fc-405c-96e1-e51ae133ba8a
 		summarizeBy: none
 
 	column customer_state
 		dataType: string
 		sourceColumn: customer_state
-		lineageTag: 2c91c6f1-468c-4fb4-96fe-bb80839f76f6
+		lineageTag: 98790e14-143c-42e2-8f12-17ff03ca840e
 		summarizeBy: none
 
 	column customer_city
 		dataType: string
 		sourceColumn: customer_city
-		lineageTag: 13f1c283-0b2a-4153-b932-a9c52f1fe22f
+		lineageTag: 5431da67-6a07-4b51-9239-cd76b6b121d5
 		summarizeBy: none
 
 	measure 'Total Orders' = ```
 			COUNTROWS(fact_orders)
 			```
-		lineageTag: 1f64ac2c-c498-4650-a529-13f8e85956ad
+		lineageTag: 4e4f9242-2542-4ecf-ac59-ae950bd6d4de
 		formatString: 0
 
 	measure 'Qualifying Orders' = ```
 			CALCULATE([Total Orders],fact_orders[is_qualifying_order]=TRUE())
 			```
-		lineageTag: 105ca8cf-928f-4344-b5e3-cd00ddd073cf
+		lineageTag: 17b1c17c-d4c9-4358-b127-0b596abccb99
 		formatString: 0
 
 	measure 'Unique Customers' = ```
 			CALCULATE(DISTINCTCOUNT(fact_orders[customer_unique_id]),fact_orders[is_qualifying_order]=TRUE())
 			```
-		lineageTag: d269d970-5a47-4f8c-aa09-46a93116d595
+		lineageTag: 6de94fe5-3a06-4c02-8ca2-6e63f2f3aff0
 		formatString: 0
 
 	measure 'Total Revenue (BRL)' = ```
 			CALCULATE(SUM(fact_orders[order_total_value]),fact_orders[is_qualifying_order]=TRUE())
 			```
-		lineageTag: 31de870d-6de3-4fc0-840c-afc3ddbbc9fb
+		lineageTag: d1377af0-eccd-4e75-a47a-d7b30d865bde
 		formatString: #,##0.00
 
 	measure 'Avg Order Value (BRL)' = ```
 			DIVIDE([Total Revenue (BRL)],[Qualifying Orders])
 			```
-		lineageTag: aad0f961-e462-407d-a464-9217e40b8c9d
+		lineageTag: 39140e19-9315-471c-9186-e0fe16ef61c6
 		formatString: #,##0.00
 
 	measure 'Delivered With Timestamps' = ```
 			CALCULATE([Total Orders],fact_orders[order_status]="delivered",NOT ISBLANK(fact_orders[delivered_date]),NOT ISBLANK(fact_orders[estimated_delivery_date]))
 			```
-		lineageTag: 102ae1a1-4196-48ab-9dce-70a4a44e5be1
+		lineageTag: 105eb59c-0671-4b0c-b9c1-652e34d36539
 		formatString: 0
 
 	measure 'Late Orders' = ```
 			CALCULATE([Total Orders],fact_orders[is_late_delivery]=TRUE())
 			```
-		lineageTag: bb0986ec-5d3c-4e1b-b757-d00a232d45df
+		lineageTag: 5029cfc5-b95c-45a5-8df3-5074168e94ed
 		formatString: 0
 
 	measure 'Late Delivery %' = ```
 			DIVIDE([Late Orders],[Delivered With Timestamps])*100
 			```
-		lineageTag: 443011f6-35d2-4a86-9ebe-adeb20024b87
+		lineageTag: acf5688d-57fb-4f02-8f97-6943e9a40f2d
 		formatString: 0.00
 
 	measure 'Avg Delivery Days' = ```
 			CALCULATE(AVERAGE(fact_orders[delivery_days]),fact_orders[order_status]="delivered",NOT ISBLANK(fact_orders[delivery_days]))
 			```
-		lineageTag: c4b9799a-9644-408d-b4dc-63825a448e0b
+		lineageTag: 9823022f-8157-4013-afb8-a4a4606357d1
 		formatString: 0.0
 
 	measure 'Avg Review Score' = ```
 			CALCULATE(AVERAGE(fact_orders[review_score]),fact_orders[order_status]="delivered")
 			```
-		lineageTag: af59df0c-1342-48ca-8867-4b77a352fb9c
+		lineageTag: 7dd579bf-e1b7-4524-b51a-f10da78bb399
 		formatString: 0.00
 
 	partition fact_orders = m

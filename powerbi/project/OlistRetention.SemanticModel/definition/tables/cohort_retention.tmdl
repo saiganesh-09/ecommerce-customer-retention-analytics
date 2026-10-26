@@ -1,52 +1,52 @@
 table cohort_retention
-	lineageTag: ebea6700-afc7-441d-b0d0-e76d5431d805
+	lineageTag: ee9a4c4a-7775-4c0c-9c75-8a4482fb67b4
 
 	column cohort_month
 		dataType: dateTime
 		sourceColumn: cohort_month
-		lineageTag: 24c5da5c-eb95-43fe-a375-e719313bf8b7
+		lineageTag: 92ca2257-92a6-4883-bc54-c0c160f9e5a9
 		summarizeBy: none
 
 	column cohort_size
 		dataType: int64
 		sourceColumn: cohort_size
-		lineageTag: ff8177dd-c6ec-4089-95d1-96e02991e965
+		lineageTag: 83ce8536-82d8-4f6d-bbb9-540265cacd06
 		summarizeBy: none
 
 	column months_since_first
 		dataType: int64
 		sourceColumn: months_since_first
-		lineageTag: cee5e981-37cb-48d7-87e8-c2176ecb98a9
+		lineageTag: 5a244d0b-6585-4e5a-88a0-7d790fa75eae
 		summarizeBy: none
 
 	column activity_month
 		dataType: dateTime
 		sourceColumn: activity_month
-		lineageTag: 101e3348-e58d-4a9b-ab10-6f251bd24ec0
+		lineageTag: 39b4117a-5d90-4df8-90b4-02c2955889ea
 		summarizeBy: none
 
 	column active_customers
 		dataType: int64
 		sourceColumn: active_customers
-		lineageTag: 3ca3ba51-eee3-492b-a05a-174b9070c299
+		lineageTag: 8328e094-4efe-4605-a258-e926a3c732a5
 		summarizeBy: none
 
 	column retention_pct
 		dataType: double
 		sourceColumn: retention_pct
-		lineageTag: 2eb04607-c6be-4894-8cda-01948548dbb6
+		lineageTag: 79c545c6-4b24-4c79-8bb1-165cbcfdcd0d
 		summarizeBy: none
 
 	column is_observed
 		dataType: boolean
 		sourceColumn: is_observed
-		lineageTag: 951d9f32-ef73-4696-9b3d-648ecefb57d3
+		lineageTag: ea27876b-349d-4549-80a5-170f930553f8
 		summarizeBy: none
 
 	measure 'Retention %' = ```
 			AVERAGE(cohort_retention[retention_pct])
 			```
-		lineageTag: a8ced91e-13f4-4c00-82ef-b526dd96157f
+		lineageTag: de863942-0efd-4d90-bc61-4050dcd61a9f
 		formatString: 0.00
 
 	partition cohort_retention = m

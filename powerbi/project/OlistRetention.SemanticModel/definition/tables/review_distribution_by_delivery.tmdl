@@ -1,28 +1,28 @@
 table review_distribution_by_delivery
-	lineageTag: a59fff4d-04f5-44ea-a1f5-7a947f335332
+	lineageTag: 13fd1113-bc6c-49a7-9146-78ed801a90cb
 
 	column delivery_outcome
 		dataType: string
 		sourceColumn: delivery_outcome
-		lineageTag: cba35794-c449-408d-b178-b782964703d8
+		lineageTag: 32aee27c-1aec-4629-8762-b0717c1739dd
 		summarizeBy: none
 
 	column review_score
 		dataType: int64
 		sourceColumn: review_score
-		lineageTag: 051aa6aa-bcb6-48c2-9c3a-f95295584f3e
+		lineageTag: 51ae05db-cbae-4964-94be-0c6209d43d36
 		summarizeBy: none
 
 	column orders
 		dataType: int64
 		sourceColumn: orders
-		lineageTag: dbf4e998-eab5-430d-add6-b9d51f7936fb
+		lineageTag: d5aa5786-b70f-4f5f-9f4c-a7fbae37d4dc
 		summarizeBy: none
 
 	column pct
 		dataType: double
 		sourceColumn: pct
-		lineageTag: 0bd03591-3807-4ee4-80bf-0d5d5da105e7
+		lineageTag: d5e3d4d2-3050-4ced-8cab-5dced5654b79
 		summarizeBy: none
 
 	partition review_distribution_by_delivery = m

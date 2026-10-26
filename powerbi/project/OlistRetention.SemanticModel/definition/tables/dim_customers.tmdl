@@ -1,137 +1,137 @@
 table dim_customers
-	lineageTag: a2a88acd-792f-48ed-b464-c1d9ac9f6063
+	lineageTag: 03f6f9a1-9725-4a06-900e-419d1a274f52
 
 	column customer_unique_id
 		dataType: string
 		sourceColumn: customer_unique_id
-		lineageTag: e17eaea2-f3c5-4339-a1d8-2ea3a9ac26e6
+		lineageTag: 70278164-59a6-4fd2-aae2-30ddb7b51ba0
 		isHidden
 		summarizeBy: none
 
 	column order_count
 		dataType: int64
 		sourceColumn: order_count
-		lineageTag: f6854eb7-4be3-402a-8b36-60579b122da0
+		lineageTag: c1fca6d8-8993-4421-8ec2-9cafc45e163d
 		summarizeBy: none
 
 	column first_purchase_date
 		dataType: dateTime
 		sourceColumn: first_purchase_date
-		lineageTag: a734564b-175b-42ad-834c-6dec4600d132
+		lineageTag: fe8e1904-4466-4248-930e-3f9236f23030
 		summarizeBy: none
 
 	column last_purchase_date
 		dataType: dateTime
 		sourceColumn: last_purchase_date
-		lineageTag: f1b2f850-a4bc-44e7-ac4c-d59791aba5a8
+		lineageTag: 68626ea5-f9a0-41c8-b38e-b2e11d479eca
 		summarizeBy: none
 
 	column first_purchase_month
 		dataType: dateTime
 		sourceColumn: first_purchase_month
-		lineageTag: 69f8a1ad-c464-461d-9965-a88b65075a05
+		lineageTag: 51d72fe3-1bb2-4fad-adaa-3ab0d01cd332
 		summarizeBy: none
 
 	column recency_days
 		dataType: int64
 		sourceColumn: recency_days
-		lineageTag: b73aa3b0-7f97-48f3-b9a4-cae2c26c61e9
+		lineageTag: 1f18d4ed-dce6-4fe0-8083-4a813274cb9d
 		summarizeBy: none
 
 	column frequency
 		dataType: int64
 		sourceColumn: frequency
-		lineageTag: 84dc1291-10e8-4e4d-a755-0e8fc790ca9c
+		lineageTag: a96813cc-ea3e-43f5-ad6e-b14b7b5c7e22
 		summarizeBy: none
 
 	column monetary_brl
 		dataType: double
 		sourceColumn: monetary_brl
-		lineageTag: 06eecf46-abfd-4137-bdd0-c38afe0a4951
+		lineageTag: 2591e125-14cf-487b-ba48-045ceb43b89e
 		summarizeBy: none
 
 	column r_score
 		dataType: int64
 		sourceColumn: r_score
-		lineageTag: cdaf7cbf-3097-42ee-b9e7-faef8ccba1c3
+		lineageTag: 09f26b00-7801-4f18-9d13-0d1f2d5245eb
 		summarizeBy: none
 
 	column f_score
 		dataType: int64
 		sourceColumn: f_score
-		lineageTag: 8301a250-9a32-4ce3-b041-15e71a37bc25
+		lineageTag: 9934dabc-75c1-421c-996d-598e974262f2
 		summarizeBy: none
 
 	column m_score
 		dataType: int64
 		sourceColumn: m_score
-		lineageTag: 61f6fe79-ec2e-4df8-9165-eff7bc55d386
+		lineageTag: 8e8c85e9-ec28-49ff-b15e-92f34a2e4d7c
 		summarizeBy: none
 
 	column rfm_score
 		dataType: int64
 		sourceColumn: rfm_score
-		lineageTag: fd3d3a2d-935c-4bb6-b675-6c5ff35823fd
+		lineageTag: 598f02c6-1375-4bae-a20b-0625593232b8
 		summarizeBy: none
 
 	column rfm_segment
 		dataType: string
 		sourceColumn: rfm_segment
-		lineageTag: ca9a1390-6c0f-473a-ad35-5f88e316f422
+		lineageTag: aeeba052-d32b-4a14-8ad7-ce12dbf49028
 		summarizeBy: none
 
 	column avg_review_score
 		dataType: double
 		sourceColumn: avg_review_score
-		lineageTag: f08dd9f3-4a6d-4865-83b5-67ea17594701
+		lineageTag: c97f1d85-33fc-4841-b6c8-76140402e426
 		summarizeBy: none
 
 	column late_deliveries
 		dataType: int64
 		sourceColumn: late_deliveries
-		lineageTag: fdbd9379-2dcb-46e9-9c7b-bf6c07db354d
+		lineageTag: 7897a588-b15c-4c51-95dd-345b7d1d36ed
 		summarizeBy: none
 
 	column is_repeat_customer
 		dataType: boolean
 		sourceColumn: is_repeat_customer
-		lineageTag: dd6f70d6-110e-4a86-8008-4ecc5865173f
+		lineageTag: 658b3fb9-9711-4cba-9d19-b6ee0d71dfe0
 		summarizeBy: none
 
 	column days_to_second_order
 		dataType: int64
 		sourceColumn: days_to_second_order
-		lineageTag: 2c430f40-c926-441c-9f38-263004e027e2
+		lineageTag: 0edfe795-f065-428c-9092-a7d0e091612e
 		summarizeBy: none
 
 	column customer_lifetime_days
 		dataType: int64
 		sourceColumn: customer_lifetime_days
-		lineageTag: a4a05a76-fda5-4615-8cfc-f4fe6cbf5030
+		lineageTag: 5237985f-b327-4aff-b9ea-ca4aee344f25
 		summarizeBy: none
 
 	measure 'Customers' = ```
 			COUNTROWS(dim_customers)
 			```
-		lineageTag: a0efb6ce-b41a-45a8-b88e-d50dd91393f7
+		lineageTag: 0f68af62-c2c5-4195-b031-593a23843d6b
 		formatString: 0
 
 	measure 'Repeat Customers' = ```
 			CALCULATE([Customers],dim_customers[is_repeat_customer]=TRUE())
 			```
-		lineageTag: ec4392f0-fae3-4f69-8d20-9bea0001550b
+		lineageTag: 1bfe8e78-473f-4186-9b18-8a51fbc7963e
 		formatString: 0
 
 	measure 'Repeat Purchase Rate %' = ```
 			DIVIDE([Repeat Customers],[Customers])*100
 			```
-		lineageTag: abf463d9-5dac-472c-8046-bb612062ec95
+		lineageTag: 01fa6ea0-654a-4687-ad18-a70ccaf53770
 		formatString: 0.00
 
 	measure 'Avg Customer Spend (BRL)' = ```
 			AVERAGE(dim_customers[monetary_brl])
 			```
-		lineageTag: d9edebb0-0733-425e-bbe7-35abb2b2ef0d
+		lineageTag: e9bd7194-ecf0-46b2-b279-4538cba1baed
 		formatString: #,##0.00
 
 	partition dim_customers = m

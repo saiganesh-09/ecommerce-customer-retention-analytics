@@ -1,34 +1,34 @@
 table late_by_state
-	lineageTag: bc6f8bb3-8047-4690-b431-e0ece1d75c77
+	lineageTag: 147a2559-7f4b-48ce-86c7-d4b6b828c14d
 
 	column customer_state
 		dataType: string
 		sourceColumn: customer_state
-		lineageTag: 90027e72-a8b6-435b-99fb-e259e28e3ea4
+		lineageTag: 27ad07df-ad7b-4f56-9e3a-aff85927cbb4
 		summarizeBy: none
 
 	column delivered_orders
 		dataType: int64
 		sourceColumn: delivered_orders
-		lineageTag: 00b249ea-c127-4566-809d-08a516f79ffd
+		lineageTag: c0c000d8-1092-414c-a98e-e59580048eda
 		summarizeBy: none
 
 	column avg_delivery_days
 		dataType: double
 		sourceColumn: avg_delivery_days
-		lineageTag: 30b25408-6f43-454b-a6c0-138678810489
+		lineageTag: 6984062f-bc55-40f3-bc73-b203e5beb59c
 		summarizeBy: none
 
 	column late_pct
 		dataType: double
 		sourceColumn: late_pct
-		lineageTag: 4ab8ebf6-f2f0-479e-8df7-d215cdd7d089
+		lineageTag: 39914a79-a3df-4343-9762-5cecdd49bc78
 		summarizeBy: none
 
 	column avg_review_score
 		dataType: double
 		sourceColumn: avg_review_score
-		lineageTag: b58c59e0-ed88-4304-b1ef-7f8665014c6a
+		lineageTag: 80131405-f022-4a59-b17d-ad64552ba0ba
 		summarizeBy: none
 
 	partition late_by_state = m

@@ -1,0 +1,46 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
+  "name": "e2c26c3e47244fb2b6f5",
+  "position": {
+    "x": 340,
+    "y": 582,
+    "z": 1000,
+    "height": 100,
+    "width": 916
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "How to read",
+                    "textStyle": {
+                      "fontSize": "10pt",
+                      "fontWeight": "bold",
+                      "color": "#1F4E79"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Month 0 = 100% by construction. Retention averages 0.48% in month 1 and decays to ~0.2% by month 6 across observed cohorts - no cohort 'warms up'. Incomplete windows are excluded, not zero-filled.",
+                    "textStyle": {
+                      "fontSize": "9pt"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

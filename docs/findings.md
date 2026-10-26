@@ -83,10 +83,10 @@ delivered order, Sep-2016 to Oct-2018, unless stated otherwise.
 
 * **Result:** "Recent One-Time Buyers" = 36,141 customers (38.7%),
   R$5.94M historical revenue (38.5%), avg recency 91 days. "High-Value
-  Inactive" = 13,755 customers, R$4.23M (27.5%), avg spend R$307.86,
-  avg recency 395 days. Proven repeat segments (Champions, Loyal,
-  Potential Loyalists, Needs Attention, At Risk) total only ~3,800
-  customers (~4%).
+  Inactive" = 13,782 customers, R$4.24M (27.5%), avg spend R$307.86,
+  avg recency 395 days. All proven repeat segments (Champions, Loyal,
+  Potential Loyalists, Needs Attention, At Risk) total only 2,801
+  customers (3.0%).
 * **Artefacts:** `analytics.rfm_segments`, `rfm_segments.png`
 
 ## F9 — Lateness is geographically concentrated

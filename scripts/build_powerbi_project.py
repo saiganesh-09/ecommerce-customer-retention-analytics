@@ -103,6 +103,9 @@ def title_obj(text: str) -> dict:
     }}]}
 
 
+_Z = [0]
+
+
 def visual(vtype: str, x: float, y: float, w: float, h: float, z: int,
            roles: dict[str, list[dict]] | None = None,
            title: str | None = None,
@@ -110,6 +113,7 @@ def visual(vtype: str, x: float, y: float, w: float, h: float, z: int,
            filters: list[dict] | None = None,
            name: str | None = None) -> tuple[str, dict]:
     name = name or uid()
+    _Z[0] += 1
     vis: dict = {"visualType": vtype}
     if roles:
         vis["query"] = {"queryState": {
@@ -119,7 +123,8 @@ def visual(vtype: str, x: float, y: float, w: float, h: float, z: int,
     if objects:
         vis["objects"] = objects
     doc = {"$schema": PBIR_SCHEMA, "name": name,
-           "position": {"x": x, "y": y, "z": z, "height": h, "width": w},
+           "position": {"x": x, "y": y, "z": _Z[0] * 1000, "height": h,
+                        "width": w, "tabOrder": _Z[0] * 1000},
            "visual": vis}
     if filters:
         doc["filterConfig"] = {"filters": filters}
@@ -374,11 +379,22 @@ def tmdl_table(name: str, spec: dict) -> str:
     return "\n".join(lines)
 
 
+def platform_file(item_type: str, display: str) -> str:
+    return json.dumps({
+        "$schema": "https://developer.microsoft.com/json-schemas/fabric/"
+                   "gitIntegration/platformProperties/2.0.0/schema.json",
+        "metadata": {"type": item_type, "displayName": display},
+        "config": {"version": "2.0", "logicalId": guid()},
+    }, indent=2)
+
+
 def build_semantic_model() -> Path:
     sm = OUT / "OlistRetention.SemanticModel"
     tables_dir = sm / "definition" / "tables"
     tables_dir.mkdir(parents=True, exist_ok=True)
 
+    (sm / ".platform").write_text(
+        platform_file("SemanticModel", "OlistRetention"), encoding="utf-8")
     (sm / "definition.pbism").write_text(json.dumps({
         "$schema": "https://developer.microsoft.com/json-schemas/fabric/"
                    "item/semanticModel/definitionProperties/1.0.0/schema.json",
@@ -478,9 +494,7 @@ def build_pages() -> dict[str, tuple[str, list[tuple[str, dict]]]]:
         "clusteredBarChart", 24, 440, 620, 264, z,
         roles={"Category": [col("revenue_by_category", "product_category")],
                "Y": [agg("revenue_by_category", "revenue_brl", 0)]},
-        title="Top 10 categories by revenue (R$)",
-        filters=[cat_filter("revenue_by_category", "product_category",
-                            top10)]))
+        title="Top 10 categories by revenue (R$)"))
     v.append(visual(
         "lineChart", 660, 440, 596, 120, z,
         roles={"Category": [col("monthly_orders", "purchase_month")],
@@ -505,8 +519,7 @@ def build_pages() -> dict[str, tuple[str, list[tuple[str, dict]]]]:
         roles={"Rows": [col("cohort_retention", "cohort_month")],
                "Columns": [col("cohort_retention", "months_since_first")],
                "Values": [meas("cohort_retention", "Retention %")]},
-        title="Cohort retention matrix (% ordering in month N)",
-        filters=[cat_filter("cohort_retention", "is_observed", ["true"])]))
+        title="Cohort retention matrix (% ordering in month N)"))
     v.append(visual(
         "clusteredColumnChart", 740, 70, 516, 240, z,
         roles={"Category": [col("cohort_sizes", "cohort_month")],
@@ -616,6 +629,16 @@ def build_report() -> Path:
     d = rep / "definition"
     (d / "pages").mkdir(parents=True, exist_ok=True)
 
+    (rep / ".platform").write_text(
+        platform_file("Report", "OlistRetention"), encoding="utf-8")
+
+    # Copy the bundled base theme that report.json references.
+    import shutil
+    theme_dst = (rep / "StaticResources" / "SharedResources"
+                 / "BaseThemes" / "CY20SU09.json")
+    theme_dst.parent.mkdir(parents=True, exist_ok=True)
+    shutil.copy(PROJECT_ROOT / "powerbi" / "theme" / "CY20SU09.json",
+                theme_dst)
     (rep / "definition.pbir").write_text(json.dumps({
         "$schema": "https://developer.microsoft.com/json-schemas/fabric/"
                    "item/report/definitionProperties/2.0.0/schema.json",
@@ -630,21 +653,37 @@ def build_report() -> Path:
         "version": "2.0.0",
     }, indent=2), encoding="utf-8")
 
+    # Full report.json skeleton matching a real Desktop-saved project:
+    # themeCollection + objects + resourcePackages + settings are present
+    # in every Desktop-produced file; omitting them breaks page loading
+    # on some Desktop versions.
     (d / "report.json").write_text(json.dumps({
         "$schema": "https://developer.microsoft.com/json-schemas/fabric/"
                    "item/report/definition/report/3.0.0/schema.json",
+        "themeCollection": {
+            "baseTheme": {
+                "name": "CY20SU09",
+                "reportVersionAtImport": {
+                    "visual": "1.8.53", "report": "2.0.53", "page": "1.3.53"},
+                "type": "SharedResources"}},
+        "objects": {"section": [{"properties": {
+            "verticalAlignment": {"expr": {"Literal": {"Value": "'Top'"}}}}}]},
+        "resourcePackages": [{
+            "name": "SharedResources",
+            "type": "SharedResources",
+            "items": [{"name": "CY20SU09",
+                       "path": "BaseThemes/CY20SU09.json",
+                       "type": "BaseTheme"}]}],
         "settings": {
             "useStylableVisualContainerHeader": True,
             "exportDataMode": "AllowSummarized",
-            "useEnhancedTooltips": True,
-        },
+            "useEnhancedTooltips": True},
         "slowDataSourceSettings": {
             "isCrossHighlightingDisabled": False,
             "isSlicerSelectionsButtonEnabled": False,
             "isFilterSelectionsButtonEnabled": False,
             "isFieldWellButtonEnabled": False,
-            "isApplyAllButtonEnabled": False,
-        },
+            "isApplyAllButtonEnabled": False},
     }, indent=2), encoding="utf-8")
 
     pages = build_pages()
@@ -673,6 +712,19 @@ def build_report() -> Path:
 
 
 def main() -> None:
+    # Wipe and regenerate everything: page/visual ids are random per run,
+    # so stale folders would otherwise accumulate inside the project.
+    # If Power BI Desktop has the project open its files are locked -
+    # close the report first or we fall back to overwriting in place.
+    if OUT.exists():
+        import shutil
+        try:
+            shutil.rmtree(OUT)
+        except PermissionError:
+            print("warning: project files locked (Desktop open?) - "
+                  "overwriting in place")
+            shutil.rmtree(OUT / "OlistRetention.Report" / "definition"
+                          / "pages", ignore_errors=True)
     OUT.mkdir(parents=True, exist_ok=True)
     (OUT / "OlistRetention.pbip").write_text(json.dumps({
         "$schema": "https://developer.microsoft.com/json-schemas/fabric/"

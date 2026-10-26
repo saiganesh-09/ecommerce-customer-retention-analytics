@@ -1,34 +1,34 @@
 table late_by_category
-	lineageTag: f97457e8-3c35-47dc-9898-82171c87e862
+	lineageTag: 8d31a18e-f1fa-4f16-a929-d7484ec7fab0
 
 	column primary_category
 		dataType: string
 		sourceColumn: primary_category
-		lineageTag: bf994200-e20c-4acf-b67f-e22f9dbc67da
+		lineageTag: 6c269c3d-90b8-466f-8a35-c7f70f437cca
 		summarizeBy: none
 
 	column delivered_orders
 		dataType: int64
 		sourceColumn: delivered_orders
-		lineageTag: 11123b94-c62c-4fb2-8dc5-9bd59d02b85e
+		lineageTag: 8394abcc-ed74-43ea-9ab5-94552b88014d
 		summarizeBy: none
 
 	column avg_delivery_days
 		dataType: double
 		sourceColumn: avg_delivery_days
-		lineageTag: 588797e6-218c-44d2-9dfc-cd40c31b8ce1
+		lineageTag: d9b4e1e3-121c-4c9c-ba8e-88e5483f0aeb
 		summarizeBy: none
 
 	column late_pct
 		dataType: double
 		sourceColumn: late_pct
-		lineageTag: 25ac9342-9090-4ba4-bdd9-ed37bab871bb
+		lineageTag: 1043c614-df4a-473e-85d6-e0d8b2b1ed0b
 		summarizeBy: none
 
 	column avg_review_score
 		dataType: double
 		sourceColumn: avg_review_score
-		lineageTag: bd308be3-d7cc-486e-8c61-dad95b50d590
+		lineageTag: 47a8c0ec-f006-4d70-8187-5e740be8a67a
 		summarizeBy: none
 
 	partition late_by_category = m

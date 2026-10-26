@@ -8,14 +8,14 @@ for retention, and what evidence supports that decision?**
 | Segment | Customers | Historical revenue | Avg spend | Avg recency | Avg freq | Nature of opportunity |
 |---|---|---|---|---|---|---|
 | Recent One-Time Buyers | 36,141 | R$5.94M | R$164 | 91 d | 1.0 | convert 1st -> 2nd order |
-| High-Value Inactive | 13,755 | R$4.23M | R$308 | 395 d | 1.0 | win-back big spenders |
-| Other One-Time Buyers | 18,067 | R$2.74M | R$152 | 220 d | 1.0 | late conversion attempt |
-| Inactive One-Time Buyers | 22,594 | R$1.64M | R$73 | 396 d | 1.0 | low value, cold |
+| High-Value Inactive | 13,782 | R$4.24M | R$308 | 395 d | 1.0 | win-back big spenders |
+| Other One-Time Buyers | 18,064 | R$2.74M | R$152 | 220 d | 1.0 | late conversion attempt |
+| Inactive One-Time Buyers | 22,570 | R$1.64M | R$73 | 396 d | 1.0 | low value, cold |
 | Potential Loyalists | 1,080 | R$321k | R$297 | 89 d | 2.0 | nurture into habit |
-| At Risk | 995 | R$294k | R$295 | 382 d | 2.1 | win-back proven repeaters |
-| Needs Attention | 569 | R$164k | R$289 | 217 d | 2.0 | prevent full lapse |
+| At Risk | 992 | R$293k | R$295 | 382 d | 2.1 | win-back proven repeaters |
+| Needs Attention | 571 | R$165k | R$289 | 217 d | 2.0 | prevent full lapse |
 | Champions | 116 | R$66k | R$571 | 91 d | 3.5 | VIP treatment |
-| Loyal Customers | 41 | R$19k | R$466 | 194 d | 3.4 | keep engaged |
+| Loyal Customers | 42 | R$20k | R$466 | 194 d | 3.4 | keep engaged |
 
 ## Prioritisation logic
 
@@ -25,8 +25,8 @@ value per response**. The data constrains each factor:
 1. **The return window is short.** Median time to a second order is 29
    days (F5); cohort retention never strengthens over time (F4). The
    best time to win a second purchase is soon after the first.
-2. **Repeat-capable customers are a rounding error.** All segments with
-   frequency >=2 together hold ~3,800 customers (4%). Even a perfect
+2. **Repeat-capable customers are a rounding error.** All customers with
+   frequency >=2 together number exactly 2,801 (3.0%). Even a perfect
    win-back cannot move the business at that scale.
 3. **Value follows the one-time buyers.** ~95% of revenue sits in
    frequency-1 customers — the upside is in creating the *second* order,
@@ -44,7 +44,7 @@ repeat-purchase window, and represent R$5.9M of proven spend.
   category-relevant offer or free-shipping voucher on the next order),
   triggered ~30-60 days post-purchase — aligned with the observed 29-day
   median return gap.
-* **Sub-priority within the segment:** the ~2,326 Recent One-Time Buyers
+* **Sub-priority within the segment:** the ~2,329 Recent One-Time Buyers
   whose first order arrived **late** (`segment_experience` table).
   F6/F7 show late delivery is the clearest dissatisfaction signal in the
   data; a service-recovery gesture to this group is the most
@@ -54,7 +54,7 @@ repeat-purchase window, and represent R$5.9M of proven spend.
   vs a holdout control group.
 * **Why not the alternatives:**
   * *At Risk / Needs Attention / Loyal* — proven repeaters, but only
-    ~1,600 customers combined; high per-customer confidence, negligible
+    ~1,605 customers combined; high per-customer confidence, negligible
     absolute upside. Appropriate for a low-cost automated win-back, not
     the flagship initiative.
   * *High-Value Inactive* — tempting (R$308 avg spend), but avg recency
@@ -85,7 +85,7 @@ the tiny repeat segments.
    run 14-21% late vs 6.8% nationally — extending estimates for those
    lanes would cut "late" complaints without faster logistics, at the
    cost of longer shown ETAs. A/B test before deciding.
-2. **Automated win-back** for At Risk + Needs Attention (~1,564
+2. **Automated win-back** for At Risk + Needs Attention (~1,563
    customers): low-cost email/voucher flow; small but highest-confidence
    audience.
 

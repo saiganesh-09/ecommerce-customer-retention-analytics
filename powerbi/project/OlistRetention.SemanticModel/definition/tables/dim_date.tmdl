@@ -1,52 +1,52 @@
 table dim_date
-	lineageTag: 7661c609-629e-4a04-a4bf-3047e1888f2b
+	lineageTag: 21b38b75-6762-41b2-b08e-e193f3136ee5
 
 	column date
 		dataType: dateTime
 		sourceColumn: date
-		lineageTag: 6afe52f8-4080-4052-a5e2-7839393d85a0
+		lineageTag: 2138219b-bd94-4eb7-b46a-04e49a8607ad
 		summarizeBy: none
 
 	column year
 		dataType: int64
 		sourceColumn: year
-		lineageTag: 15de1674-6ef7-4615-86a1-d7178485271c
+		lineageTag: aaec0255-f6ed-4c55-b08a-9c1d5e9f5ede
 		summarizeBy: none
 
 	column month
 		dataType: int64
 		sourceColumn: month
-		lineageTag: 6c4e954f-1435-4165-bc26-3439d6dcc54e
+		lineageTag: 02dc2d06-59d8-4a46-9d83-4e83513d9f63
 		summarizeBy: none
 
 	column month_name
 		dataType: string
 		sourceColumn: month_name
-		lineageTag: ff76f0f4-cbae-4ef2-b800-8d1b1b9e9b98
+		lineageTag: 3bbdc74a-6423-4321-98d9-6a532c22e182
 		summarizeBy: none
 
 	column year_month
 		dataType: string
 		sourceColumn: year_month
-		lineageTag: a8492c55-49b5-4f09-9846-bd7de4db5541
+		lineageTag: 444e0ed0-7fb1-4ef6-81e6-c772dd8beb24
 		summarizeBy: none
 
 	column quarter
 		dataType: int64
 		sourceColumn: quarter
-		lineageTag: b02fae3e-854c-43a3-93f2-61186476777c
+		lineageTag: 579726d8-5b5f-4a50-bdb0-75d577139888
 		summarizeBy: none
 
 	column year_quarter
 		dataType: string
 		sourceColumn: year_quarter
-		lineageTag: 29f8f517-2afe-4362-8917-4e0c39421a66
+		lineageTag: df945bf2-c3c2-4034-8268-033cb0524d67
 		summarizeBy: none
 
 	column day_of_week
 		dataType: string
 		sourceColumn: day_of_week
-		lineageTag: acdcbc89-d110-438a-8005-7ba6bfa252e3
+		lineageTag: 623ca69c-be4d-4d98-894f-bd2ee50de684
 		summarizeBy: none
 
 	partition dim_date = m

@@ -1,22 +1,22 @@
 table cohort_sizes
-	lineageTag: 9b9d064d-1c87-47bd-9cae-708abfe51f43
+	lineageTag: 8658027d-d600-4115-a286-e8bd098aa9e8
 
 	column cohort_month
 		dataType: dateTime
 		sourceColumn: cohort_month
-		lineageTag: 63beeaeb-4762-4d6b-a18e-2b35840b86ee
+		lineageTag: f3d77c9e-1134-4824-98eb-beb1b8a99587
 		summarizeBy: none
 
 	column cohort_size
 		dataType: int64
 		sourceColumn: cohort_size
-		lineageTag: 353b6cfd-90fc-486c-ae29-8ad815358d65
+		lineageTag: 5abbbf1d-61f6-4fa0-9783-02fcd3985637
 		summarizeBy: none
 
 	column cumulative_customers
 		dataType: double
 		sourceColumn: cumulative_customers
-		lineageTag: 3d46e30f-1251-47a0-9c3c-c7d226c68b78
+		lineageTag: c88c9445-8420-4c66-9b1f-4ee36b9cb1e8
 		summarizeBy: none
 
 	partition cohort_sizes = m

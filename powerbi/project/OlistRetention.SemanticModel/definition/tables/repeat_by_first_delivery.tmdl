@@ -1,40 +1,40 @@
 table repeat_by_first_delivery
-	lineageTag: 6d594547-9ab9-4501-9932-c81ef2ace681
+	lineageTag: c4103022-547b-470b-bade-43faa43987c2
 
 	column cohort_label
 		dataType: string
 		sourceColumn: cohort_label
-		lineageTag: 0b545d87-acb0-415a-87b8-a4253c01a478
+		lineageTag: 6167e4cf-a0bb-4cbb-894a-6e8594e86cca
 		summarizeBy: none
 
 	column customers
 		dataType: int64
 		sourceColumn: customers
-		lineageTag: 50902d42-7712-4588-9bc3-c91510c1fa17
+		lineageTag: b2c464ad-e6c2-4b33-bb3a-8657208adf6d
 		summarizeBy: none
 
 	column repeat_customers
 		dataType: int64
 		sourceColumn: repeat_customers
-		lineageTag: fefba3ef-fcd0-44a2-b805-9fa4edef2fa5
+		lineageTag: 7bce4d21-79d4-4f85-b227-e27e5872c2b0
 		summarizeBy: none
 
 	column repeat_rate_pct
 		dataType: double
 		sourceColumn: repeat_rate_pct
-		lineageTag: dc3d4fd2-735b-4c57-9ee4-4b7f6e74563f
+		lineageTag: 4ec36212-92fe-4c83-8d86-3e001729e62d
 		summarizeBy: none
 
 	column customers_180d_window
 		dataType: int64
 		sourceColumn: customers_180d_window
-		lineageTag: 494fe043-5a61-4b53-b673-e0391fa91c5c
+		lineageTag: c185cf43-8145-488a-ae50-e57ab367baac
 		summarizeBy: none
 
 	column repeat_rate_pct_180d
 		dataType: double
 		sourceColumn: repeat_rate_pct_180d
-		lineageTag: e04be40d-2ca6-4304-969c-e9a4c46789fd
+		lineageTag: 541e2db0-44c0-4d54-9541-be65683f5e82
 		summarizeBy: none
 
 	partition repeat_by_first_delivery = m
