@@ -22,7 +22,7 @@
                     "textStyle": {
                       "fontSize": "10pt",
                       "fontWeight": "bold",
-                      "color": "#1F4E79"
+                      "color": "#F8FAFC"
                     }
                   }
                 ]
@@ -32,7 +32,8 @@
                   {
                     "value": "97% of customers order exactly once (repeat rate 3.0%). Repeat buyers return within ~29 days when they do. Delivery experience is the clearest satisfaction signal: late orders score 2.27 vs 4.29 on-time.",
                     "textStyle": {
-                      "fontSize": "9pt"
+                      "fontSize": "9pt",
+                      "color": "#C9D6E3"
                     }
                   }
                 ]
@@ -43,7 +44,7 @@
                     "value": "Population: delivered orders, Sep-2016 - Oct-2018. Revenue = items + freight.",
                     "textStyle": {
                       "fontSize": "9pt",
-                      "color": "#666666"
+                      "color": "#A8B6C8"
                     }
                   }
                 ]

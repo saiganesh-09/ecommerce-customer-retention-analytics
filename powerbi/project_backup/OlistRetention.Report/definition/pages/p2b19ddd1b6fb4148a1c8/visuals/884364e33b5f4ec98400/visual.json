@@ -1,0 +1,156 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
+  "name": "884364e33b5f4ec98400",
+  "position": {
+    "x": 24,
+    "y": 442,
+    "z": 17000,
+    "height": 262,
+    "width": 1232,
+    "tabOrder": 17000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "segment_opportunity"
+                    }
+                  },
+                  "Property": "rfm_segment"
+                }
+              },
+              "queryRef": "segment_opportunity.rfm_segment"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "segment_opportunity"
+                    }
+                  },
+                  "Property": "customers"
+                }
+              },
+              "queryRef": "segment_opportunity.customers"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "segment_opportunity"
+                    }
+                  },
+                  "Property": "pct_customers"
+                }
+              },
+              "queryRef": "segment_opportunity.pct_customers"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "segment_opportunity"
+                    }
+                  },
+                  "Property": "total_revenue_brl"
+                }
+              },
+              "queryRef": "segment_opportunity.total_revenue_brl"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "segment_opportunity"
+                    }
+                  },
+                  "Property": "avg_spend_brl"
+                }
+              },
+              "queryRef": "segment_opportunity.avg_spend_brl"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "segment_opportunity"
+                    }
+                  },
+                  "Property": "avg_recency_days"
+                }
+              },
+              "queryRef": "segment_opportunity.avg_recency_days"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "segment_opportunity"
+                    }
+                  },
+                  "Property": "avg_frequency"
+                }
+              },
+              "queryRef": "segment_opportunity.avg_frequency"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "segment_opportunity"
+                    }
+                  },
+                  "Property": "late_delivery_pct"
+                }
+              },
+              "queryRef": "segment_opportunity.late_delivery_pct"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Segment opportunity detail'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "'10'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

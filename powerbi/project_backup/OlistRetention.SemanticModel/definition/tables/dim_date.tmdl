@@ -1,0 +1,62 @@
+table dim_date
+	lineageTag: 21b38b75-6762-41b2-b08e-e193f3136ee5
+
+	column date
+		dataType: dateTime
+		sourceColumn: date
+		lineageTag: 2138219b-bd94-4eb7-b46a-04e49a8607ad
+		summarizeBy: none
+
+	column year
+		dataType: int64
+		sourceColumn: year
+		lineageTag: aaec0255-f6ed-4c55-b08a-9c1d5e9f5ede
+		summarizeBy: none
+
+	column month
+		dataType: int64
+		sourceColumn: month
+		lineageTag: 02dc2d06-59d8-4a46-9d83-4e83513d9f63
+		summarizeBy: none
+
+	column month_name
+		dataType: string
+		sourceColumn: month_name
+		lineageTag: 3bbdc74a-6423-4321-98d9-6a532c22e182
+		summarizeBy: none
+
+	column year_month
+		dataType: string
+		sourceColumn: year_month
+		lineageTag: 444e0ed0-7fb1-4ef6-81e6-c772dd8beb24
+		summarizeBy: none
+
+	column quarter
+		dataType: int64
+		sourceColumn: quarter
+		lineageTag: 579726d8-5b5f-4a50-bdb0-75d577139888
+		summarizeBy: none
+
+	column year_quarter
+		dataType: string
+		sourceColumn: year_quarter
+		lineageTag: df945bf2-c3c2-4034-8268-033cb0524d67
+		summarizeBy: none
+
+	column day_of_week
+		dataType: string
+		sourceColumn: day_of_week
+		lineageTag: 623ca69c-be4d-4d98-894f-bd2ee50de684
+		summarizeBy: none
+
+	partition dim_date = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataFolder & "/dim_date.csv"),[Delimiter=",",Encoding=65001,QuoteStyle=QuoteStyle.Csv]),
+				    PromotedHeaders = Table.PromoteHeaders(Source,[PromoteAllScalars=true]),
+				    ChangedType = Table.TransformColumnTypes(PromotedHeaders,{{"date", type date},{"year", Int64.Type},{"month", Int64.Type},{"month_name", type text},{"year_month", type text},{"quarter", Int64.Type},{"year_quarter", type text},{"day_of_week", type text}})
+				in
+				    ChangedType
+
+	annotation PBI_ResultType = Table

@@ -1,0 +1,50 @@
+table revenue_by_category
+	lineageTag: 3782cd8a-34f3-4c2d-8e28-d2f59a129945
+
+	column product_category
+		dataType: string
+		sourceColumn: product_category
+		lineageTag: 5d9c92a6-5a9c-42e3-bfab-da062ffd5e49
+		summarizeBy: none
+
+	column orders
+		dataType: int64
+		sourceColumn: orders
+		lineageTag: 2448fe41-905d-4b7d-b9d1-645781b4dede
+		summarizeBy: none
+
+	column items
+		dataType: int64
+		sourceColumn: items
+		lineageTag: cbac4fea-75c7-428f-a561-03f55332eb32
+		summarizeBy: none
+
+	column revenue_brl
+		dataType: double
+		sourceColumn: revenue_brl
+		lineageTag: 47c5389f-a0d2-443b-bb7f-89d6212397c7
+		summarizeBy: none
+
+	column pct_revenue
+		dataType: double
+		sourceColumn: pct_revenue
+		lineageTag: a60adbc0-9216-445c-8166-c1fef8215da1
+		summarizeBy: none
+
+	column avg_item_value_brl
+		dataType: double
+		sourceColumn: avg_item_value_brl
+		lineageTag: bf7e5dc9-fe02-4caa-99ea-88875ad1523b
+		summarizeBy: none
+
+	partition revenue_by_category = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataFolder & "/revenue_by_category.csv"),[Delimiter=",",Encoding=65001,QuoteStyle=QuoteStyle.Csv]),
+				    PromotedHeaders = Table.PromoteHeaders(Source,[PromoteAllScalars=true]),
+				    ChangedType = Table.TransformColumnTypes(PromotedHeaders,{{"product_category", type text},{"orders", Int64.Type},{"items", Int64.Type},{"revenue_brl", type number},{"pct_revenue", type number},{"avg_item_value_brl", type number}})
+				in
+				    ChangedType
+
+	annotation PBI_ResultType = Table

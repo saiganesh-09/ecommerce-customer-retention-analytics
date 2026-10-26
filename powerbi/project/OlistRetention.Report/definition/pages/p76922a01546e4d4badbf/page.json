@@ -4,5 +4,64 @@
   "displayName": "Customer Retention",
   "displayOption": "FitToPage",
   "height": 720,
-  "width": 1280
+  "width": 1280,
+  "objects": {
+    "background": [
+      {
+        "properties": {
+          "color": {
+            "solid": {
+              "color": {
+                "expr": {
+                  "Literal": {
+                    "Value": "'#0B1220'"
+                  }
+                }
+              }
+            }
+          },
+          "image": {
+            "expr": {
+              "ResourcePackageItem": {
+                "PackageName": "RegisteredResources",
+                "PackageType": 1,
+                "ItemName": "bg_dark.png"
+              }
+            }
+          },
+          "transparency": {
+            "expr": {
+              "Literal": {
+                "Value": "0D"
+              }
+            }
+          },
+          "imageScaling": {
+            "expr": {
+              "Literal": {
+                "Value": "'Fit'"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "outspace": [
+      {
+        "properties": {
+          "color": {
+            "solid": {
+              "color": {
+                "expr": {
+                  "Literal": {
+                    "Value": "'#0B1220'"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    ]
+  }
 }

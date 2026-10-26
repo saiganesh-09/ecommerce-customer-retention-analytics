@@ -11,7 +11,7 @@
       "type": "SharedResources"
     },
     "customTheme": {
-      "name": "NewExecutive",
+      "name": "OlistDark",
       "reportVersionAtImport": {
         "visual": "1.8.53",
         "report": "2.0.53",
@@ -59,9 +59,20 @@
           "type": "BaseTheme"
         },
         {
-          "name": "NewExecutive",
-          "path": "BuiltInThemes/NewExecutive.json",
+          "name": "OlistDark",
+          "path": "CustomThemes/OlistDark.json",
           "type": "CustomTheme"
+        }
+      ]
+    },
+    {
+      "name": "RegisteredResources",
+      "type": "RegisteredResources",
+      "items": [
+        {
+          "name": "bg_dark.png",
+          "path": "bg_dark.png",
+          "type": "Image"
         }
       ]
     }

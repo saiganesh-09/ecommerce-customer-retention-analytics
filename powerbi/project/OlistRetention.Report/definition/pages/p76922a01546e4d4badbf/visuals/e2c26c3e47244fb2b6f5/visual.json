@@ -22,7 +22,7 @@
                     "textStyle": {
                       "fontSize": "10pt",
                       "fontWeight": "bold",
-                      "color": "#1F4E79"
+                      "color": "#F8FAFC"
                     }
                   }
                 ]
@@ -32,7 +32,8 @@
                   {
                     "value": "Month 0 = 100% by construction. Retention averages 0.48% in month 1 and decays to ~0.2% by month 6 across observed cohorts - no cohort 'warms up'. Incomplete windows are excluded, not zero-filled.",
                     "textStyle": {
-                      "fontSize": "9pt"
+                      "fontSize": "9pt",
+                      "color": "#C9D6E3"
                     }
                   }
                 ]
