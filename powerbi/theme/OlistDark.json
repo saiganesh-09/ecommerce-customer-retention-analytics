@@ -24,17 +24,15 @@
         "title": [{ "show": true, "fontColor": { "solid": { "color": "#F8FAFC" } }, "fontSize": 10, "fontFamily": "Segoe UI Semibold" }],
         "outspacePane": [{ "backgroundColor": { "solid": { "color": "#0B1220" } }, "foregroundColor": { "solid": { "color": "#F8FAFC" } }, "transparency": 0 }],
         "filterCard": [{ "backgroundColor": { "solid": { "color": "#111C2E" } }, "foregroundColor": { "solid": { "color": "#F8FAFC" } }, "transparency": 0 }]
-      }
-    },
-    "card": { "*": { "labels": [{ "color": { "solid": { "color": "#38BDF8" } }, "fontSize": 22 }], "categoryLabels": [{ "show": false }] } },
-    "slicer": { "*": { "items": [{ "color": { "solid": { "color": "#F8FAFC" } }, "background": { "solid": { "color": "#111C2E" } } }], "header": [{ "fontColor": { "solid": { "color": "#F8FAFC" } }, "show": true }] } },
-    "lineChart": { "*": { "lineStyles": [{ "strokeWidth": 3 }] } },
-    "pivotTable": { "*": { "grid": [{ "gridVertical": true, "gridVerticalColor": { "solid": { "color": "#29384D" } }, "gridHorizontal": true, "gridHorizontalColor": { "solid": { "color": "#29384D" } } }] } },
-    "*": {
+      },
       "categoryAxis": [{ "labelColor": { "solid": { "color": "#A8B6C8" } }, "titleColor": { "solid": { "color": "#A8B6C8" } }, "gridlineColor": { "solid": { "color": "#29384D" } } }],
       "valueAxis": [{ "labelColor": { "solid": { "color": "#A8B6C8" } }, "titleColor": { "solid": { "color": "#A8B6C8" } }, "gridlineColor": { "solid": { "color": "#29384D" } } }],
       "labels": [{ "color": { "solid": { "color": "#F8FAFC" } } }],
       "legend": [{ "labelColor": { "solid": { "color": "#A8B6C8" } }, "titleColor": { "solid": { "color": "#A8B6C8" } } }]
-    }
+    },
+    "card": { "*": { "labels": [{ "color": { "solid": { "color": "#38BDF8" } }, "fontSize": 22 }], "categoryLabels": [{ "show": false }] } },
+    "slicer": { "*": { "items": [{ "color": { "solid": { "color": "#F8FAFC" } }, "background": { "solid": { "color": "#111C2E" } } }], "header": [{ "fontColor": { "solid": { "color": "#F8FAFC" } }, "show": true }] } },
+    "lineChart": { "*": { "lineStyles": [{ "strokeWidth": 3 }] } },
+    "pivotTable": { "*": { "grid": [{ "gridVertical": true, "gridVerticalColor": { "solid": { "color": "#29384D" } }, "gridHorizontal": true, "gridHorizontalColor": { "solid": { "color": "#29384D" } } }] } }
   }
 }
