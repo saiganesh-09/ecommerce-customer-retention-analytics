@@ -1,53 +1,57 @@
 table cohort_retention
 	lineageTag: ee9a4c4a-7775-4c0c-9c75-8a4482fb67b4
 
+	measure 'Retention %' = AVERAGE(cohort_retention[retention_pct])
+		formatString: 0.00
+		lineageTag: de863942-0efd-4d90-bc61-4050dcd61a9f
+
 	column cohort_month
 		dataType: dateTime
-		sourceColumn: cohort_month
+		formatString: Long Date
 		lineageTag: 92ca2257-92a6-4883-bc54-c0c160f9e5a9
 		summarizeBy: none
+		sourceColumn: cohort_month
+
+		annotation UnderlyingDateTimeDataType = Date
 
 	column cohort_size
 		dataType: int64
-		sourceColumn: cohort_size
 		lineageTag: 83ce8536-82d8-4f6d-bbb9-540265cacd06
 		summarizeBy: none
+		sourceColumn: cohort_size
 
 	column months_since_first
 		dataType: int64
-		sourceColumn: months_since_first
 		lineageTag: 5a244d0b-6585-4e5a-88a0-7d790fa75eae
 		summarizeBy: none
+		sourceColumn: months_since_first
 
 	column activity_month
 		dataType: dateTime
-		sourceColumn: activity_month
+		formatString: Long Date
 		lineageTag: 39b4117a-5d90-4df8-90b4-02c2955889ea
 		summarizeBy: none
+		sourceColumn: activity_month
+
+		annotation UnderlyingDateTimeDataType = Date
 
 	column active_customers
 		dataType: int64
-		sourceColumn: active_customers
 		lineageTag: 8328e094-4efe-4605-a258-e926a3c732a5
 		summarizeBy: none
+		sourceColumn: active_customers
 
 	column retention_pct
 		dataType: double
-		sourceColumn: retention_pct
 		lineageTag: 79c545c6-4b24-4c79-8bb1-165cbcfdcd0d
 		summarizeBy: none
+		sourceColumn: retention_pct
 
 	column is_observed
 		dataType: boolean
-		sourceColumn: is_observed
 		lineageTag: ea27876b-349d-4549-80a5-170f930553f8
 		summarizeBy: none
-
-	measure 'Retention %' = ```
-			AVERAGE(cohort_retention[retention_pct])
-			```
-		lineageTag: de863942-0efd-4d90-bc61-4050dcd61a9f
-		formatString: 0.00
+		sourceColumn: is_observed
 
 	partition cohort_retention = m
 		mode: import
@@ -60,3 +64,4 @@ table cohort_retention
 				    ChangedType
 
 	annotation PBI_ResultType = Table
+

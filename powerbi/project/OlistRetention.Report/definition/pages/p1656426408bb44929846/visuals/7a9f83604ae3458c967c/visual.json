@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
   "name": "7a9f83604ae3458c967c",
   "position": {
     "x": 24,
@@ -25,7 +25,8 @@
                   "Property": "review_score"
                 }
               },
-              "queryRef": "review_distribution_by_delivery.review_score"
+              "queryRef": "review_distribution_by_delivery.review_score",
+              "active": true
             }
           ]
         },

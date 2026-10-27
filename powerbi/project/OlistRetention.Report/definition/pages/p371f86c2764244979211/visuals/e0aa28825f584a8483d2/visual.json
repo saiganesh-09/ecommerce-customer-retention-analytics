@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
   "name": "e0aa28825f584a8483d2",
   "position": {
     "x": 24,
@@ -26,7 +26,8 @@
                   "Property": "purchase_month"
                 }
               },
-              "queryRef": "monthly_orders.purchase_month"
+              "queryRef": "monthly_orders.purchase_month",
+              "active": true
             }
           ]
         },

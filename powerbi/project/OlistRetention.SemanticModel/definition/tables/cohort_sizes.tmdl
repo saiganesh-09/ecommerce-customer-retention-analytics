@@ -3,21 +3,24 @@ table cohort_sizes
 
 	column cohort_month
 		dataType: dateTime
-		sourceColumn: cohort_month
+		formatString: Long Date
 		lineageTag: f3d77c9e-1134-4824-98eb-beb1b8a99587
 		summarizeBy: none
+		sourceColumn: cohort_month
+
+		annotation UnderlyingDateTimeDataType = Date
 
 	column cohort_size
 		dataType: int64
-		sourceColumn: cohort_size
 		lineageTag: 5abbbf1d-61f6-4fa0-9783-02fcd3985637
 		summarizeBy: none
+		sourceColumn: cohort_size
 
 	column cumulative_customers
 		dataType: double
-		sourceColumn: cumulative_customers
 		lineageTag: c88c9445-8420-4c66-9b1f-4ee36b9cb1e8
 		summarizeBy: none
+		sourceColumn: cumulative_customers
 
 	partition cohort_sizes = m
 		mode: import
@@ -30,3 +33,4 @@ table cohort_sizes
 				    ChangedType
 
 	annotation PBI_ResultType = Table
+

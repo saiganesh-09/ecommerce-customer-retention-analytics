@@ -3,33 +3,33 @@ table late_by_state
 
 	column customer_state
 		dataType: string
-		sourceColumn: customer_state
 		lineageTag: 27ad07df-ad7b-4f56-9e3a-aff85927cbb4
 		summarizeBy: none
+		sourceColumn: customer_state
 
 	column delivered_orders
 		dataType: int64
-		sourceColumn: delivered_orders
 		lineageTag: c0c000d8-1092-414c-a98e-e59580048eda
 		summarizeBy: none
+		sourceColumn: delivered_orders
 
 	column avg_delivery_days
 		dataType: double
-		sourceColumn: avg_delivery_days
 		lineageTag: 6984062f-bc55-40f3-bc73-b203e5beb59c
 		summarizeBy: none
+		sourceColumn: avg_delivery_days
 
 	column late_pct
 		dataType: double
-		sourceColumn: late_pct
 		lineageTag: 39914a79-a3df-4343-9762-5cecdd49bc78
 		summarizeBy: none
+		sourceColumn: late_pct
 
 	column avg_review_score
 		dataType: double
-		sourceColumn: avg_review_score
 		lineageTag: 80131405-f022-4a59-b17d-ad64552ba0ba
 		summarizeBy: none
+		sourceColumn: avg_review_score
 
 	partition late_by_state = m
 		mode: import
@@ -42,3 +42,4 @@ table late_by_state
 				    ChangedType
 
 	annotation PBI_ResultType = Table
+

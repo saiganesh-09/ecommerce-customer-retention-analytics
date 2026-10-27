@@ -3,27 +3,27 @@ table review_distribution_by_delivery
 
 	column delivery_outcome
 		dataType: string
-		sourceColumn: delivery_outcome
 		lineageTag: 32aee27c-1aec-4629-8762-b0717c1739dd
 		summarizeBy: none
+		sourceColumn: delivery_outcome
 
 	column review_score
 		dataType: int64
-		sourceColumn: review_score
 		lineageTag: 51ae05db-cbae-4964-94be-0c6209d43d36
 		summarizeBy: none
+		sourceColumn: review_score
 
 	column orders
 		dataType: int64
-		sourceColumn: orders
 		lineageTag: d5aa5786-b70f-4f5f-9f4c-a7fbae37d4dc
 		summarizeBy: none
+		sourceColumn: orders
 
 	column pct
 		dataType: double
-		sourceColumn: pct
 		lineageTag: d5e3d4d2-3050-4ced-8cab-5dced5654b79
 		summarizeBy: none
+		sourceColumn: pct
 
 	partition review_distribution_by_delivery = m
 		mode: import
@@ -36,3 +36,4 @@ table review_distribution_by_delivery
 				    ChangedType
 
 	annotation PBI_ResultType = Table
+

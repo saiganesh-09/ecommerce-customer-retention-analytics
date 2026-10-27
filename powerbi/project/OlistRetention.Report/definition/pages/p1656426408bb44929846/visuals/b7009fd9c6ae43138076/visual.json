@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
   "name": "b7009fd9c6ae43138076",
   "position": {
     "x": 640,
@@ -25,7 +25,8 @@
                   "Property": "delivery_outcome"
                 }
               },
-              "queryRef": "review_by_delivery.delivery_outcome"
+              "queryRef": "review_by_delivery.delivery_outcome",
+              "active": true
             }
           ]
         },

@@ -3,63 +3,63 @@ table rfm_segments
 
 	column rfm_segment
 		dataType: string
-		sourceColumn: rfm_segment
 		lineageTag: 40d4f84d-f5d8-47d8-91e3-15af69afece8
 		summarizeBy: none
+		sourceColumn: rfm_segment
 
 	column customers
 		dataType: int64
-		sourceColumn: customers
 		lineageTag: 203f7042-0257-4e14-88b7-69aa2bd3f0d7
 		summarizeBy: none
+		sourceColumn: customers
 
 	column pct_customers
 		dataType: double
-		sourceColumn: pct_customers
 		lineageTag: f93da55b-41c4-403c-a9e2-d96e1606401f
 		summarizeBy: none
+		sourceColumn: pct_customers
 
 	column total_revenue_brl
 		dataType: double
-		sourceColumn: total_revenue_brl
 		lineageTag: f4358b70-c5c4-4bcf-a9d8-bd7c468ec0ae
 		summarizeBy: none
+		sourceColumn: total_revenue_brl
 
 	column pct_revenue
 		dataType: double
-		sourceColumn: pct_revenue
 		lineageTag: bbc24eaf-fdce-4b02-95a9-d195aaae140a
 		summarizeBy: none
+		sourceColumn: pct_revenue
 
 	column avg_spend_brl
 		dataType: double
-		sourceColumn: avg_spend_brl
 		lineageTag: 9db3cc87-8b8e-4267-af6b-24ba634e5100
 		summarizeBy: none
+		sourceColumn: avg_spend_brl
 
 	column avg_recency_days
 		dataType: double
-		sourceColumn: avg_recency_days
 		lineageTag: 0df8b69c-9679-465d-897c-841f1a2d8774
 		summarizeBy: none
+		sourceColumn: avg_recency_days
 
 	column avg_frequency
 		dataType: double
-		sourceColumn: avg_frequency
 		lineageTag: 47774e76-57dd-4027-a1b3-6dade3d40249
 		summarizeBy: none
+		sourceColumn: avg_frequency
 
 	column avg_review_score
 		dataType: double
-		sourceColumn: avg_review_score
 		lineageTag: 4af99698-f72e-47bd-927a-3b7ae152933e
 		summarizeBy: none
+		sourceColumn: avg_review_score
 
 	column late_delivery_pct
 		dataType: double
-		sourceColumn: late_delivery_pct
 		lineageTag: b5eb2fa7-a8dd-4150-badb-9193350e0211
 		summarizeBy: none
+		sourceColumn: late_delivery_pct
 
 	partition rfm_segments = m
 		mode: import
@@ -72,3 +72,4 @@ table rfm_segments
 				    ChangedType
 
 	annotation PBI_ResultType = Table
+

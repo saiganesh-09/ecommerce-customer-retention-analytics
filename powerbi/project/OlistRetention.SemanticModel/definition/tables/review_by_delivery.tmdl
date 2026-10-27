@@ -3,45 +3,45 @@ table review_by_delivery
 
 	column delivery_outcome
 		dataType: string
-		sourceColumn: delivery_outcome
 		lineageTag: 9b2c33ae-d7cb-4c2a-a89d-e06dc2d6b990
 		summarizeBy: none
+		sourceColumn: delivery_outcome
 
 	column orders_with_review
 		dataType: int64
-		sourceColumn: orders_with_review
 		lineageTag: d0a24c8e-2197-4a41-9e9b-367ee1a47504
 		summarizeBy: none
+		sourceColumn: orders_with_review
 
 	column avg_review_score
 		dataType: double
-		sourceColumn: avg_review_score
 		lineageTag: 0159b34f-f3f5-4c80-a9a7-6948c72ace15
 		summarizeBy: none
+		sourceColumn: avg_review_score
 
 	column pct_score_1_2
 		dataType: double
-		sourceColumn: pct_score_1_2
 		lineageTag: 32b348ad-a4ee-47d9-b37a-8574b796356a
 		summarizeBy: none
+		sourceColumn: pct_score_1_2
 
 	column pct_score_5
 		dataType: double
-		sourceColumn: pct_score_5
 		lineageTag: 396ded0b-28f6-404f-82fc-acc002499b26
 		summarizeBy: none
+		sourceColumn: pct_score_5
 
 	column avg_delivery_days
 		dataType: double
-		sourceColumn: avg_delivery_days
 		lineageTag: 45b2dc36-89c7-4dd3-ad2d-0f6214a02a8a
 		summarizeBy: none
+		sourceColumn: avg_delivery_days
 
 	column avg_delay_days
 		dataType: double
-		sourceColumn: avg_delay_days
 		lineageTag: 688ad786-e171-4fc5-9ee6-4beb2349f152
 		summarizeBy: none
+		sourceColumn: avg_delay_days
 
 	partition review_by_delivery = m
 		mode: import
@@ -54,3 +54,4 @@ table review_by_delivery
 				    ChangedType
 
 	annotation PBI_ResultType = Table
+

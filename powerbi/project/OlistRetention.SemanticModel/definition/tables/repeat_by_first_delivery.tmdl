@@ -3,39 +3,39 @@ table repeat_by_first_delivery
 
 	column cohort_label
 		dataType: string
-		sourceColumn: cohort_label
 		lineageTag: 6167e4cf-a0bb-4cbb-894a-6e8594e86cca
 		summarizeBy: none
+		sourceColumn: cohort_label
 
 	column customers
 		dataType: int64
-		sourceColumn: customers
 		lineageTag: b2c464ad-e6c2-4b33-bb3a-8657208adf6d
 		summarizeBy: none
+		sourceColumn: customers
 
 	column repeat_customers
 		dataType: int64
-		sourceColumn: repeat_customers
 		lineageTag: 7bce4d21-79d4-4f85-b227-e27e5872c2b0
 		summarizeBy: none
+		sourceColumn: repeat_customers
 
 	column repeat_rate_pct
 		dataType: double
-		sourceColumn: repeat_rate_pct
 		lineageTag: 4ec36212-92fe-4c83-8d86-3e001729e62d
 		summarizeBy: none
+		sourceColumn: repeat_rate_pct
 
 	column customers_180d_window
 		dataType: int64
-		sourceColumn: customers_180d_window
 		lineageTag: c185cf43-8145-488a-ae50-e57ab367baac
 		summarizeBy: none
+		sourceColumn: customers_180d_window
 
 	column repeat_rate_pct_180d
 		dataType: double
-		sourceColumn: repeat_rate_pct_180d
 		lineageTag: 541e2db0-44c0-4d54-9541-be65683f5e82
 		summarizeBy: none
+		sourceColumn: repeat_rate_pct_180d
 
 	partition repeat_by_first_delivery = m
 		mode: import
@@ -48,3 +48,4 @@ table repeat_by_first_delivery
 				    ChangedType
 
 	annotation PBI_ResultType = Table
+

@@ -3,51 +3,54 @@ table dim_date
 
 	column date
 		dataType: dateTime
-		sourceColumn: date
+		formatString: Long Date
 		lineageTag: 2138219b-bd94-4eb7-b46a-04e49a8607ad
 		summarizeBy: none
+		sourceColumn: date
+
+		annotation UnderlyingDateTimeDataType = Date
 
 	column year
 		dataType: int64
-		sourceColumn: year
 		lineageTag: aaec0255-f6ed-4c55-b08a-9c1d5e9f5ede
 		summarizeBy: none
+		sourceColumn: year
 
 	column month
 		dataType: int64
-		sourceColumn: month
 		lineageTag: 02dc2d06-59d8-4a46-9d83-4e83513d9f63
 		summarizeBy: none
+		sourceColumn: month
 
 	column month_name
 		dataType: string
-		sourceColumn: month_name
 		lineageTag: 3bbdc74a-6423-4321-98d9-6a532c22e182
 		summarizeBy: none
+		sourceColumn: month_name
 
 	column year_month
 		dataType: string
-		sourceColumn: year_month
 		lineageTag: 444e0ed0-7fb1-4ef6-81e6-c772dd8beb24
 		summarizeBy: none
+		sourceColumn: year_month
 
 	column quarter
 		dataType: int64
-		sourceColumn: quarter
 		lineageTag: 579726d8-5b5f-4a50-bdb0-75d577139888
 		summarizeBy: none
+		sourceColumn: quarter
 
 	column year_quarter
 		dataType: string
-		sourceColumn: year_quarter
 		lineageTag: df945bf2-c3c2-4034-8268-033cb0524d67
 		summarizeBy: none
+		sourceColumn: year_quarter
 
 	column day_of_week
 		dataType: string
-		sourceColumn: day_of_week
 		lineageTag: 623ca69c-be4d-4d98-894f-bd2ee50de684
 		summarizeBy: none
+		sourceColumn: day_of_week
 
 	partition dim_date = m
 		mode: import
@@ -60,3 +63,4 @@ table dim_date
 				    ChangedType
 
 	annotation PBI_ResultType = Table
+

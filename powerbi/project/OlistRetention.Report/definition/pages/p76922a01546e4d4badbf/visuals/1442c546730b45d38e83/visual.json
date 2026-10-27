@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
   "name": "1442c546730b45d38e83",
   "position": {
     "x": 740,
@@ -26,7 +26,8 @@
                   "Property": "months_since_first"
                 }
               },
-              "queryRef": "cohort_summary.months_since_first"
+              "queryRef": "cohort_summary.months_since_first",
+              "active": true
             }
           ]
         },

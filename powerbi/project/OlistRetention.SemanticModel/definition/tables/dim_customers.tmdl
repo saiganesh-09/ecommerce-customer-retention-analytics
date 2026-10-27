@@ -1,138 +1,139 @@
 table dim_customers
 	lineageTag: 03f6f9a1-9725-4a06-900e-419d1a274f52
 
+	measure Customers = COUNTROWS(dim_customers)
+		formatString: 0
+		lineageTag: 0f68af62-c2c5-4195-b031-593a23843d6b
+
+	measure 'Repeat Customers' = CALCULATE([Customers],dim_customers[is_repeat_customer]=TRUE())
+		formatString: 0
+		lineageTag: 1bfe8e78-473f-4186-9b18-8a51fbc7963e
+
+	measure 'Repeat Purchase Rate %' = DIVIDE([Repeat Customers],[Customers])*100
+		formatString: 0.00
+		lineageTag: 01fa6ea0-654a-4687-ad18-a70ccaf53770
+
+	measure 'Avg Customer Spend (BRL)' = AVERAGE(dim_customers[monetary_brl])
+		formatString: #,##0.00
+		lineageTag: e9bd7194-ecf0-46b2-b279-4538cba1baed
+
 	column customer_unique_id
 		dataType: string
-		sourceColumn: customer_unique_id
-		lineageTag: 70278164-59a6-4fd2-aae2-30ddb7b51ba0
 		isHidden
+		lineageTag: 70278164-59a6-4fd2-aae2-30ddb7b51ba0
 		summarizeBy: none
+		sourceColumn: customer_unique_id
 
 	column order_count
 		dataType: int64
-		sourceColumn: order_count
 		lineageTag: c1fca6d8-8993-4421-8ec2-9cafc45e163d
 		summarizeBy: none
+		sourceColumn: order_count
 
 	column first_purchase_date
 		dataType: dateTime
-		sourceColumn: first_purchase_date
+		formatString: Long Date
 		lineageTag: fe8e1904-4466-4248-930e-3f9236f23030
 		summarizeBy: none
+		sourceColumn: first_purchase_date
+
+		annotation UnderlyingDateTimeDataType = Date
 
 	column last_purchase_date
 		dataType: dateTime
-		sourceColumn: last_purchase_date
+		formatString: Long Date
 		lineageTag: 68626ea5-f9a0-41c8-b38e-b2e11d479eca
 		summarizeBy: none
+		sourceColumn: last_purchase_date
+
+		annotation UnderlyingDateTimeDataType = Date
 
 	column first_purchase_month
 		dataType: dateTime
-		sourceColumn: first_purchase_month
+		formatString: Long Date
 		lineageTag: 51d72fe3-1bb2-4fad-adaa-3ab0d01cd332
 		summarizeBy: none
+		sourceColumn: first_purchase_month
+
+		annotation UnderlyingDateTimeDataType = Date
 
 	column recency_days
 		dataType: int64
-		sourceColumn: recency_days
 		lineageTag: 1f18d4ed-dce6-4fe0-8083-4a813274cb9d
 		summarizeBy: none
+		sourceColumn: recency_days
 
 	column frequency
 		dataType: int64
-		sourceColumn: frequency
 		lineageTag: a96813cc-ea3e-43f5-ad6e-b14b7b5c7e22
 		summarizeBy: none
+		sourceColumn: frequency
 
 	column monetary_brl
 		dataType: double
-		sourceColumn: monetary_brl
 		lineageTag: 2591e125-14cf-487b-ba48-045ceb43b89e
 		summarizeBy: none
+		sourceColumn: monetary_brl
 
 	column r_score
 		dataType: int64
-		sourceColumn: r_score
 		lineageTag: 09f26b00-7801-4f18-9d13-0d1f2d5245eb
 		summarizeBy: none
+		sourceColumn: r_score
 
 	column f_score
 		dataType: int64
-		sourceColumn: f_score
 		lineageTag: 9934dabc-75c1-421c-996d-598e974262f2
 		summarizeBy: none
+		sourceColumn: f_score
 
 	column m_score
 		dataType: int64
-		sourceColumn: m_score
 		lineageTag: 8e8c85e9-ec28-49ff-b15e-92f34a2e4d7c
 		summarizeBy: none
+		sourceColumn: m_score
 
 	column rfm_score
 		dataType: int64
-		sourceColumn: rfm_score
 		lineageTag: 598f02c6-1375-4bae-a20b-0625593232b8
 		summarizeBy: none
+		sourceColumn: rfm_score
 
 	column rfm_segment
 		dataType: string
-		sourceColumn: rfm_segment
 		lineageTag: aeeba052-d32b-4a14-8ad7-ce12dbf49028
 		summarizeBy: none
+		sourceColumn: rfm_segment
 
 	column avg_review_score
 		dataType: double
-		sourceColumn: avg_review_score
 		lineageTag: c97f1d85-33fc-4841-b6c8-76140402e426
 		summarizeBy: none
+		sourceColumn: avg_review_score
 
 	column late_deliveries
 		dataType: int64
-		sourceColumn: late_deliveries
 		lineageTag: 7897a588-b15c-4c51-95dd-345b7d1d36ed
 		summarizeBy: none
+		sourceColumn: late_deliveries
 
 	column is_repeat_customer
 		dataType: boolean
-		sourceColumn: is_repeat_customer
 		lineageTag: 658b3fb9-9711-4cba-9d19-b6ee0d71dfe0
 		summarizeBy: none
+		sourceColumn: is_repeat_customer
 
 	column days_to_second_order
 		dataType: int64
-		sourceColumn: days_to_second_order
 		lineageTag: 0edfe795-f065-428c-9092-a7d0e091612e
 		summarizeBy: none
+		sourceColumn: days_to_second_order
 
 	column customer_lifetime_days
 		dataType: int64
-		sourceColumn: customer_lifetime_days
 		lineageTag: 5237985f-b327-4aff-b9ea-ca4aee344f25
 		summarizeBy: none
-
-	measure 'Customers' = ```
-			COUNTROWS(dim_customers)
-			```
-		lineageTag: 0f68af62-c2c5-4195-b031-593a23843d6b
-		formatString: 0
-
-	measure 'Repeat Customers' = ```
-			CALCULATE([Customers],dim_customers[is_repeat_customer]=TRUE())
-			```
-		lineageTag: 1bfe8e78-473f-4186-9b18-8a51fbc7963e
-		formatString: 0
-
-	measure 'Repeat Purchase Rate %' = ```
-			DIVIDE([Repeat Customers],[Customers])*100
-			```
-		lineageTag: 01fa6ea0-654a-4687-ad18-a70ccaf53770
-		formatString: 0.00
-
-	measure 'Avg Customer Spend (BRL)' = ```
-			AVERAGE(dim_customers[monetary_brl])
-			```
-		lineageTag: e9bd7194-ecf0-46b2-b279-4538cba1baed
-		formatString: #,##0.00
+		sourceColumn: customer_lifetime_days
 
 	partition dim_customers = m
 		mode: import
@@ -145,3 +146,4 @@ table dim_customers
 				    ChangedType
 
 	annotation PBI_ResultType = Table
+

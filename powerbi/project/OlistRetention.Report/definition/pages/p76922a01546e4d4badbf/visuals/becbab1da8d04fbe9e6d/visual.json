@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
   "name": "becbab1da8d04fbe9e6d",
   "position": {
     "x": 24,
@@ -13,23 +13,6 @@
     "visualType": "pivotTable",
     "query": {
       "queryState": {
-        "Rows": {
-          "projections": [
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "cohort_retention"
-                    }
-                  },
-                  "Property": "cohort_month"
-                }
-              },
-              "queryRef": "cohort_retention.cohort_month"
-            }
-          ]
-        },
         "Columns": {
           "projections": [
             {
@@ -43,7 +26,26 @@
                   "Property": "months_since_first"
                 }
               },
-              "queryRef": "cohort_retention.months_since_first"
+              "queryRef": "cohort_retention.months_since_first",
+              "active": true
+            }
+          ]
+        },
+        "Rows": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "cohort_retention"
+                    }
+                  },
+                  "Property": "cohort_month"
+                }
+              },
+              "queryRef": "cohort_retention.cohort_month",
+              "active": true
             }
           ]
         },

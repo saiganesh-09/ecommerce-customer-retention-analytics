@@ -1,7 +1,0 @@
-relationship 3359252a-1e29-4ba6-8517-c5a18f348d20
-	fromColumn: fact_orders.customer_unique_id
-	toColumn: dim_customers.customer_unique_id
-
-relationship 7feb1fdd-32d7-4222-bc40-eda9383c2de8
-	fromColumn: fact_orders.purchase_date
-	toColumn: dim_date.date

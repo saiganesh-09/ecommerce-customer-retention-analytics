@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
   "name": "dabf6a075dfe4b3598d9",
   "position": {
     "x": 24,
@@ -25,7 +25,8 @@
                   "Property": "customer_state"
                 }
               },
-              "queryRef": "fact_orders.customer_state"
+              "queryRef": "fact_orders.customer_state",
+              "active": true
             }
           ]
         }

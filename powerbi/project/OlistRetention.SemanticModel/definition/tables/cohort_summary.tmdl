@@ -3,33 +3,33 @@ table cohort_summary
 
 	column months_since_first
 		dataType: int64
-		sourceColumn: months_since_first
 		lineageTag: 3501643c-cd5b-432c-b047-1f910f35017a
 		summarizeBy: none
+		sourceColumn: months_since_first
 
 	column cohorts_observed
 		dataType: int64
-		sourceColumn: cohorts_observed
 		lineageTag: ef8cfc13-3e29-4da2-aeae-a85e897d3d94
 		summarizeBy: none
+		sourceColumn: cohorts_observed
 
 	column returning_customers
 		dataType: int64
-		sourceColumn: returning_customers
 		lineageTag: 4386987a-94ef-4869-9c80-5835c3b2320e
 		summarizeBy: none
+		sourceColumn: returning_customers
 
 	column customers_in_window
 		dataType: int64
-		sourceColumn: customers_in_window
 		lineageTag: d1092b7b-7176-428c-b3dc-a5bf17d8ea26
 		summarizeBy: none
+		sourceColumn: customers_in_window
 
 	column avg_retention_pct
 		dataType: double
-		sourceColumn: avg_retention_pct
 		lineageTag: 4073044c-66e1-48b9-9128-ff43351de4a6
 		summarizeBy: none
+		sourceColumn: avg_retention_pct
 
 	partition cohort_summary = m
 		mode: import
@@ -42,3 +42,4 @@ table cohort_summary
 				    ChangedType
 
 	annotation PBI_ResultType = Table
+

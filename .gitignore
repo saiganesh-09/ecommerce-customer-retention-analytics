@@ -33,3 +33,5 @@ outputs/reports/*.pdf
 
 # Regenerable analysis outputs
 outputs/summary_tables/*.csv
+powerbi/project_backup/
+.pbi/

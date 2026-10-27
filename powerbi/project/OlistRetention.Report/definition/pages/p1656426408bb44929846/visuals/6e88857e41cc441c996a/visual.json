@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
   "name": "6e88857e41cc441c996a",
   "position": {
     "x": 956,
@@ -25,7 +25,8 @@
                   "Property": "cohort_label"
                 }
               },
-              "queryRef": "repeat_by_first_delivery.cohort_label"
+              "queryRef": "repeat_by_first_delivery.cohort_label",
+              "active": true
             }
           ]
         },

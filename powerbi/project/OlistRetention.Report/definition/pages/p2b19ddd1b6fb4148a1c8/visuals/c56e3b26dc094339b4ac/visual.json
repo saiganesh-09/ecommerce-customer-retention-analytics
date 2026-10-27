@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
   "name": "c56e3b26dc094339b4ac",
   "position": {
     "x": 24,
@@ -26,7 +26,8 @@
                   "Property": "rfm_segment"
                 }
               },
-              "queryRef": "rfm_segments.rfm_segment"
+              "queryRef": "rfm_segments.rfm_segment",
+              "active": true
             }
           ]
         },

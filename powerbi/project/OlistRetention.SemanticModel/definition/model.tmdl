@@ -8,6 +8,10 @@ model Model
 
 annotation __PBI_TimeIntelligenceEnabled = 0
 
+annotation PBI_QueryOrder = ["fact_orders","dim_customers","dim_date","cohort_retention","cohort_sizes","cohort_summary","rfm_segments","segment_opportunity","review_by_delivery","review_distribution_by_delivery","repeat_by_first_delivery","late_by_state","late_by_category","monthly_orders","revenue_by_category","customer_purchase_frequency","DataFolder"]
+
+annotation PBI_ProTooling = ["DevMode"]
+
 ref table fact_orders
 ref table dim_customers
 ref table dim_date
@@ -26,3 +30,4 @@ ref table revenue_by_category
 ref table customer_purchase_frequency
 
 ref cultureInfo en-US
+
