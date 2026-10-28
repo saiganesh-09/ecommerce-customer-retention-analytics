@@ -26,15 +26,6 @@
                 "Value": "70D"
               }
             }
-          },
-          "image": {
-            "expr": {
-              "ResourcePackageItem": {
-                "PackageName": "RegisteredResources",
-                "PackageType": 1,
-                "ItemName": "bg_dark.png"
-              }
-            }
           }
         }
       }

@@ -64,17 +64,6 @@
           "type": "CustomTheme"
         }
       ]
-    },
-    {
-      "name": "RegisteredResources",
-      "type": "RegisteredResources",
-      "items": [
-        {
-          "name": "bg_dark.png",
-          "path": "bg_dark.png",
-          "type": "Image"
-        }
-      ]
     }
   ],
   "settings": {

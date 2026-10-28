@@ -10,6 +10,15 @@
 >
 > The rest of this document is the manual build guide — use it to
 > rebuild from scratch, to fix issues, or to extend the report.
+>
+> **Dark theme:** the report applies `OlistDark` (see
+> `StaticResources/SharedResources/CustomThemes/OlistDark.json`) on top
+> of the `CY20SU09` base theme — navy canvas, dark cards, blue/teal
+> data colors. Optional decorative background: `powerbi/theme/bg_dark.png`
+> is bundled in the repo but Desktop strips programmatic page-image
+> references on save, so if you want it, add it per page manually:
+> select the page > Format page > Canvas background > Browse >
+> `powerbi/theme/bg_dark.png` > Transparency ~70% > Image fit: Fit.
 
 ## What you need
 
