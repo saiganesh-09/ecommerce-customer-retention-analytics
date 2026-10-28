@@ -1,0 +1,29 @@
+name: tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  pytest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+          cache: pip
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run tests
+        run: pytest -v
+        # DB-dependent tests skip automatically when PostgreSQL is
+        # unreachable (conftest.py requires_db) - raw Olist data is not
+        # in the repo by design, so unit tests run and DB tests skip:
+        # expected result: 43 passed, 12 skipped.
