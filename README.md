@@ -10,6 +10,18 @@ Dataset](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce)
 > prioritize for retention, and how are delivery performance and customer
 > satisfaction associated with repeat purchasing?**
 
+## Dashboard preview
+
+Four-page Power BI report (`powerbi/project/OlistRetention.pbip` —
+open in Power BI Desktop; GitHub cannot render .pbix/.pbip files, so
+screenshots are included here):
+
+| Executive Overview | Customer Retention |
+|---|---|
+| ![Executive Overview](powerbi/screenshots/page1_executive_overview.png) | ![Customer Retention](powerbi/screenshots/page2_customer_retention.png) |
+| **RFM Segmentation** | **Delivery & Experience** |
+| ![RFM Segmentation](powerbi/screenshots/page3_rfm_segmentation.png) | ![Delivery & Experience](powerbi/screenshots/page4_delivery_experience.png) |
+
 ## Headline results (verified, not estimated)
 
 | Finding | Value |
